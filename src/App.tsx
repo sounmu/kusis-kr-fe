@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Main from './components/Main'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
+import Title from './components/Title'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <div className="main-content">
         <div className="grid-container">
           <div className="col-12 col-md-12 col-sm-12">
+            <Title />
             <Navbar />
           </div>
           <div className="col-12 col-md-12 col-sm-12">
