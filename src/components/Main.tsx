@@ -1,20 +1,13 @@
-function Main() {
-    const number: number = 10;
-    const user: { name: string; isLogin: boolean } = {
-        name: "강문수",
-        isLogin: false,
-    };
-    return (
-      <main>
-        <h1>main</h1>
-        <h2>{number % 2 === 0 ? "짝수" : "홀수"}</h2>
-        <div>{user.isLogin ? (
-            <div>로그아웃</div>
-        ) : (
-            <div>로그인</div>
-        )}</div>
-      </main>
-    );
-  };
+import "./Main.css";
 
-  export default Main;
+const Main = () => {
+    return (
+        <div className="content-background">
+            <div className="main-content">
+                {/* Main 컴포넌트의 내용 */}
+            </div>
+        </div>
+    );
+};
+
+export default Main;

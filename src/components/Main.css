@@ -1,18 +1,16 @@
-.footer {
+.content-background {
     width: 100vw;
-    height: 160px;
-    background-color: #49454F;
+    background-color: #f5f5f5;
+    min-height: calc(100vh - 260px);
     position: relative;
     left: 50%;
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    z-index: 1000;
 }
 
-.footer-content {
+.main-content {
     max-width: 1200px;
     margin: 0 auto;
-    height: 100%;
     padding: 0;
 } 

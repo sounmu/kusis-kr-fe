@@ -8,13 +8,10 @@ import Title from './components/Title'
 function App() {
   return (
     <div className="app">
-      <Header />
       <div className="main-content">
+        <Title />
+        <Navbar />
         <div className="grid-container">
-          <div className="col-12 col-md-12 col-sm-12">
-            <Title />
-            <Navbar />
-          </div>
           <div className="col-12 col-md-12 col-sm-12">
             <Main />
           </div>

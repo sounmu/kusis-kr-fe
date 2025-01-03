@@ -35,7 +35,7 @@ function Navbar() {
                             onMouseLeave={() => setActiveMenu(null)}
                             onClick={() => toggleDropdown("새내기배움터")}
                         >
-                            새내기배움터
+                            {'새내기\n배움터'}
                         </li>
                         <li className="menu-item col-1 col-md-3 col-sm-6"
                             style={{ gridColumn: '8' }}

@@ -1,7 +1,7 @@
 /* Navbar 기본 스타일 */
 .navbar-wrapper {
     width: 100%;
-    background-color: #90ee90;
+    /*background-color: #90ee90;*/
 }
 
 .navbar-container {
@@ -37,13 +37,15 @@
     cursor: pointer;
     padding: 10px 10px;
     font-size: 18px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 1);
     border-radius: 4px;
     transition: background-color 0.3s ease;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 80px; /* 높이를 navbar 높이와 동일하게 설정 */
+    white-space: pre-line; /* 줄바꿈 허용 */
 }
 
 .menu-item:hover {
@@ -52,17 +54,18 @@
 
 /* 드롭다운 배경 */
 .dropdown-backdrop {
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 180px;
     left: 0;
     width: 100%;
+    height: auto;
     background-color: rgba(255, 255, 255, 0.95);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.3s ease;
-    z-index: 1000; /* 다른 요소들 위에 표시되도록 */
+    z-index: 1000;
 }
 
 .dropdown-backdrop.show {
@@ -73,7 +76,8 @@
 
 /* 드롭다운 내용 컨테이너 */
 .dropdown-content {
-    width: 1200px;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
     position: relative;
 }
