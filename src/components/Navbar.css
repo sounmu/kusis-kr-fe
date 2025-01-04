@@ -1,7 +1,7 @@
 /* Navbar 기본 스타일 */
 .navbar-wrapper {
     width: 100%;
-    /*background-color: #90ee90;*/
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .navbar-container {
@@ -37,6 +37,7 @@
     cursor: pointer;
     padding: 10px 10px;
     font-size: 18px;
+    font-family: 'Noto Sans KR', sans-serif;
     background-color: rgba(255, 255, 255, 1);
     border-radius: 4px;
     transition: background-color 0.3s ease;
@@ -44,8 +45,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80px; /* 높이를 navbar 높이와 동일하게 설정 */
-    white-space: pre-line; /* 줄바꿈 허용 */
+    height: 80px;
+    white-space: pre-line;
 }
 
 .menu-item:hover {
@@ -87,27 +88,52 @@
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
+    display: grid;
+    grid-template-columns: repeat(12, 78px);
+    gap: 12px 24px;
+    padding: 0;
 }
 
 /* 드롭다운 내부 스타일 */
 .dropdown-inner {
-    padding: 30px 0;
+    grid-column: 5 / 9;
+    padding: 15px 0;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    justify-content: center;
+    gap: 5px;
     opacity: 0;
     transform: translateY(10px);
     transition: 
-        opacity 0.3s ease 0.1s,  /* 0.1초 지연 */
+        opacity 0.3s ease 0.1s,
         transform 0.3s ease 0.1s;
+    height: 100%;
 }
 
 .dropdown-inner a {
     text-decoration: none;
     color: #333;
     font-size: 16px;
-    padding: 10px 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    padding: 5px 0;
     transition: color 0.2s ease;
+    white-space: pre-line;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;  /* 아이콘과 텍스트 사이 간격 줄임 */
+    height: 100%;
+    flex-wrap: wrap;  /* 줄바꿈 허용 */
+}
+
+.dropdown-inner .icon {
+    width: 16px;  /* 크기 조정 */
+    height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2px;  /* 좌우 여백 추가 */
 }
 
 .dropdown-inner a:hover {
