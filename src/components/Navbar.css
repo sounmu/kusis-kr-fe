@@ -60,11 +60,18 @@
     width: 100%;
     height: auto;
     background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* 그림자 효과 수정 - 더 부드럽고 번지는 듯한 효과 */
+    box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 10px 15px -3px rgba(0, 0, 0, 0.05),
+        0 20px 25px -5px rgba(0, 0, 0, 0.05);
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
+    transform: translateY(-20px);  /* 시작 위치를 위로 올림 */
+    transition: 
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);  /* 부드러운 이징 효과 */
     z-index: 1000;
 }
 
@@ -88,6 +95,11 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 
+        opacity 0.3s ease 0.1s,  /* 0.1초 지연 */
+        transform 0.3s ease 0.1s;
 }
 
 .dropdown-inner a {
@@ -100,4 +112,9 @@
 
 .dropdown-inner a:hover {
     color: #007bff;
+}
+
+.dropdown-backdrop.show .dropdown-inner {
+    opacity: 1;
+    transform: translateY(0);
 }

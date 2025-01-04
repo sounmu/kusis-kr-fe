@@ -45,24 +45,24 @@
 .school-title-kr {
     font-size: 24px;
     font-weight: 700;
-    color: black;
+    color: RGB(31, 36, 39);
 }
 
 .school-title-en {
     font-size: 16px;
-    color: black;
+    color: RGB(31, 36, 39);
 }
 
 .school-title-dept {
     font-size: 14px;
-    color: black;
+    color: RGB(31, 36, 39);
 }
 
 .info-helper {
     grid-column: 5 / 8;
     font-size: 40px;
     font-weight: 700;
-    color: RGB(31, 36, 39);
+    color: RGB(195, 31, 30);
 }
 
 .divider {
