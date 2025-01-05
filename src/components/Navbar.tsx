@@ -128,6 +128,20 @@ function Navbar() {
                                 </a>
                             </div>
                         )}
+                        {activeMenu === "학생회" && (
+                            <div className="dropdown-inner" style={{ gridColumn: '6' }}>
+                                <a href="https://cafe.naver.com/kusis" target="_blank" rel="noopener noreferrer">
+                                    {'자치단체'}
+                                </a>
+                            </div>
+                        )}
+                        {activeMenu === "학생회" && (
+                            <div className="dropdown-inner" style={{ gridColumn: '7' }}>
+                                <a href="https://cafe.naver.com/kusis" target="_blank" rel="noopener noreferrer">
+                                    {'특별기구'}
+                                </a>
+                            </div>
+                        )}
                         {activeMenu === "새내기배움터" && (
                             <div className="dropdown-inner" style={{ gridColumn: '7' }}>
                                 <a href="https://kusis.kr/2025ot" target="_blank" rel="noopener noreferrer">
