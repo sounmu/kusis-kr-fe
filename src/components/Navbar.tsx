@@ -111,7 +111,7 @@ function Navbar() {
                         {activeMenu === "학생회" && (
                             <div className="dropdown-inner" style={{ gridColumn: '6' }}>
                                 <a href="https://cafe.naver.com/kusis" target="_blank" rel="noopener noreferrer">
-                                    {'학생회\n카페'}
+                                    {'자전 학생회\n카페'}
                                 </a>
                             </div>
                         )}
@@ -131,7 +131,7 @@ function Navbar() {
                         {activeMenu === "새내기배움터" && (
                             <div className="dropdown-inner" style={{ gridColumn: '7' }}>
                                 <a href="https://kusis.kr/2025ot" target="_blank" rel="noopener noreferrer">
-                                    {'새내기배움터\n페이지'}
+                                    {'새터 안내\n바로가기'}
                                 </a>
                             </div>
                         )}

@@ -2,6 +2,7 @@
 .navbar-wrapper {
     width: 100%;
     font-family: 'Noto Sans KR', sans-serif;
+    position: relative;
 }
 
 .navbar-container {
@@ -55,12 +56,12 @@
 
 /* 드롭다운 배경 */
 .dropdown-backdrop {
-    position: fixed;
-    top: 180px;
+    position: absolute;
+    top: 100%;
     left: 0;
     width: 100%;
     height: auto;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 1);
     /* 그림자 효과 수정 - 더 부드럽고 번지는 듯한 효과 */
     box-shadow: 
         0 4px 6px -1px rgba(0, 0, 0, 0.05),
