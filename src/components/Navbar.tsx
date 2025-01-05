@@ -15,7 +15,7 @@ function Navbar() {
                 <nav className="navbar">
                     <ul className="menu">
                         <li className="menu-item col-1 col-md-3 col-sm-6"
-                            style={{ gridColumn: '5' }}
+                            style={{ gridColumn: '1' }}
                             onMouseEnter={() => setActiveMenu("학과")}
                             onMouseLeave={() => setActiveMenu(null)}
                             onClick={() => toggleDropdown("학과")}                    
@@ -23,7 +23,7 @@ function Navbar() {
                             학과
                         </li>
                         <li className="menu-item col-1 col-md-3 col-sm-6"
-                            style={{ gridColumn: '6' }}
+                            style={{ gridColumn: '2' }}
                             onMouseEnter={() => setActiveMenu("학생회")}
                             onMouseLeave={() => setActiveMenu(null)}
                             onClick={() => toggleDropdown("학생회")}
@@ -31,7 +31,7 @@ function Navbar() {
                             학생회
                         </li>
                         <li className="menu-item col-1 col-md-3 col-sm-6"
-                            style={{ gridColumn: '7' }}
+                            style={{ gridColumn: '3' }}
                             onMouseEnter={() => setActiveMenu("새내기배움터")}
                             onMouseLeave={() => setActiveMenu(null)}
                             onClick={() => toggleDropdown("새내기배움터")}
@@ -39,7 +39,7 @@ function Navbar() {
                             {'새내기\n배움터'}
                         </li>
                         <li className="menu-item col-1 col-md-3 col-sm-6"
-                            style={{ gridColumn: '8' }}
+                            style={{ gridColumn: '4' }}
                             onMouseEnter={() => setActiveMenu("가이드")}
                             onMouseLeave={() => setActiveMenu(null)}
                             onClick={() => toggleDropdown("가이드")}
@@ -55,35 +55,35 @@ function Navbar() {
                 >
                     <div className="dropdown-content">
                         {activeMenu === "학과" && (
-                            <div className="dropdown-inner" style={{ gridColumn: '5' }}>
+                            <div className="dropdown-inner" style={{ gridColumn: '1' }}>
                                 <a href="https://sis.korea.ac.kr/sis/index.do" target="_blank" rel="noopener noreferrer">
                                     {'자전 학부\n홈페이지'}
                                 </a>
                             </div>
                         )}
                         {activeMenu === "학과" && (
-                            <div className="dropdown-inner" style={{ gridColumn: '6' }}>
+                            <div className="dropdown-inner" style={{ gridColumn: '2' }}>
                                 <a href="https://portal.korea.ac.kr/" target="_blank" rel="noopener noreferrer">
                                     {'KUPID'}
                                 </a>
                             </div>
                         )}
                         {activeMenu === "학과" && (
-                            <div className="dropdown-inner" style={{ gridColumn: '7' }}>
+                            <div className="dropdown-inner" style={{ gridColumn: '3' }}>
                                 <a href="https://portal.korea.ac.kr/" target="_blank" rel="noopener noreferrer">
                                     {'LMS\n(차후 수정)'}
                                 </a>
                             </div>
                         )}
                         {activeMenu === "학과" && (
-                            <div className="dropdown-inner" style={{ gridColumn: '8' }}>
+                            <div className="dropdown-inner" style={{ gridColumn: '4' }}>
                                 <a href="https://sugang.korea.ac.kr/" target="_blank" rel="noopener noreferrer">
                                     {'수강신청\n시스템'}
                                 </a>
                             </div>
                         )}
                         {activeMenu === "학과" && (
-                            <div className="dropdown-inner" style={{ gridColumn: '5' }}>
+                            <div className="dropdown-inner" style={{ gridColumn: '1' }}>
                                 <a href="https://www.instagram.com/koreauniversity.sis/" target="_blank" rel="noopener noreferrer">
                                     {'자전 행정실'}
                                     <div className="icon-wrapper">
@@ -96,28 +96,28 @@ function Navbar() {
                             </div>
                         )}
                         {activeMenu === "학과" && (
-                            <div className="dropdown-inner" style={{ gridColumn: '7' }}>
+                            <div className="dropdown-inner" style={{ gridColumn: '2' }}>
                                 <a href="https://record.korea.ac.kr" target="_blank" rel="noopener noreferrer">
                                     {'성적조회\n시스템'}
                                 </a>
                             </div>
                         )}
                         {activeMenu === "학과" && (
-                            <div className="dropdown-inner" style={{ gridColumn: '8' }}>
+                            <div className="dropdown-inner" style={{ gridColumn: '3' }}>
                                 <a href="https://klue.kr/" target="_blank" rel="noopener noreferrer">
                                     {'KLUE'}
                                 </a>
                             </div>
                         )}
                         {activeMenu === "학생회" && (
-                            <div className="dropdown-inner" style={{ gridColumn: '6' }}>
+                            <div className="dropdown-inner" style={{ gridColumn: '2' }}>
                                 <a href="https://cafe.naver.com/kusis" target="_blank" rel="noopener noreferrer">
                                     {'자전 학생회\n카페'}
                                 </a>
                             </div>
                         )}
                         {activeMenu === "학생회" && (
-                            <div className="dropdown-inner" style={{ gridColumn: '7' }}>
+                            <div className="dropdown-inner" style={{ gridColumn: '3' }}>
                                 <a href="https://www.instagram.com/kusis_2009/" target="_blank" rel="noopener noreferrer">
                                     {'자전 학생회'}
                                     <div className="icon-wrapper">
@@ -130,28 +130,28 @@ function Navbar() {
                             </div>
                         )}
                         {activeMenu === "학생회" && (
-                            <div className="dropdown-inner" style={{ gridColumn: '6' }}>
+                            <div className="dropdown-inner" style={{ gridColumn: '2' }}>
                                 <a href="https://cafe.naver.com/kusis" target="_blank" rel="noopener noreferrer">
                                     {'자치단체'}
                                 </a>
                             </div>
                         )}
                         {activeMenu === "학생회" && (
-                            <div className="dropdown-inner" style={{ gridColumn: '7' }}>
+                            <div className="dropdown-inner" style={{ gridColumn: '3' }}>
                                 <a href="https://cafe.naver.com/kusis" target="_blank" rel="noopener noreferrer">
                                     {'특별기구'}
                                 </a>
                             </div>
                         )}
                         {activeMenu === "새내기배움터" && (
-                            <div className="dropdown-inner" style={{ gridColumn: '7' }}>
+                            <div className="dropdown-inner" style={{ gridColumn: '3' }}>
                                 <Link to="/2025ot"> 
                                     {'새터 안내\n바로가기'} 
                                 </Link>
                             </div>
                         )}
                         {activeMenu === "가이드" && (
-                            <div className="dropdown-inner" style={{ gridColumn: '8' }}>
+                            <div className="dropdown-inner" style={{ gridColumn: '4' }}>
                                 <a href="" target="_blank" rel="noopener noreferrer">
                                     {'미완성\n입니다ㅠ'}
                                 </a>

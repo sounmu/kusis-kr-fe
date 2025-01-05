@@ -1,10 +1,15 @@
 import "./Main.css";
+import Banner from "./Banner";
+import banner1 from "../assets/images/image.png";
 
 const Main = () => {
+    const bannerImages = [
+        banner1,
+    ];
     return (
         <div className="content-background">
             <div className="main-content">
-                {/* Main 컴포넌트의 내용 */}
+                <Banner images={bannerImages} />
             </div>
         </div>
     );

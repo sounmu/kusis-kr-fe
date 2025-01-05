@@ -10,27 +10,31 @@
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding: 0;
 }
 
 .navbar {
-    width: 100%;
+    width: fit-content;
     height: 80px;
     display: flex;
     align-items: center;
+    margin: 0 auto;
 }
 
 /* 메뉴 리스트 */
 .menu {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(12, 78px);
+    grid-template-columns: repeat(4, 78px);
     gap: 24px;
     padding: 0;
     margin: 0 auto;
-    max-width: 1200px;
-    height: 100%; /* navbar 높이에 맞춤 */
-    align-items: center; /* 메뉴 항목 수직 중앙 정렬 */
-    /*background-color: #fef3e7;*/
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
 }
 
 /* 메뉴 항목 */
@@ -50,6 +54,7 @@
     justify-content: center;
     height: 80px;
     white-space: pre-line;
+    width: 78px;
 }
 
 /* 구분선 추가 */
@@ -99,14 +104,13 @@
 
 /* 드롭다운 내용 컨테이너 */
 .dropdown-content {
-    width: 100%;
-    max-width: 1200px;
+    width: fit-content;
     margin: 0 auto;
-    position: relative;
     display: grid;
-    grid-template-columns: repeat(12, 78px);
-    gap: 12px 24px;
+    grid-template-columns: repeat(4, 78px);
+    gap: 24px;
     padding: 0;
+    justify-content: center;
 }
 
 /* 드롭다운 내부 스타일 */
@@ -165,4 +169,100 @@
 .dropdown-backdrop.show .dropdown-inner {
     opacity: 1;
     transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .navbar-container {
+        padding: 0 16px;
+    }
+
+    .menu {
+        grid-template-columns: repeat(4, 60px);
+        gap: 16px;
+    }
+
+    .menu-item {
+        width: 60px;
+        height: 60px;
+        padding: 8px;
+        font-size: 16px;
+        white-space: normal;
+    }
+
+    /* 드롭다운 조정 */
+    .dropdown-content {
+        grid-template-columns: repeat(4, 60px);
+        gap: 16px;
+        padding: 16px;
+        justify-content: center;
+    }
+
+    .dropdown-inner {
+        grid-column: span 1;
+        height: auto;
+        min-height: 70px;
+    }
+
+    /* 드롭다운 위치 조정 */
+    .dropdown-backdrop {
+        padding: 0 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-container {
+        padding: 0 12px;
+    }
+
+    .menu {
+        grid-template-columns: repeat(4, 50px);
+        gap: 12px;
+    }
+
+    .menu-item {
+        width: 50px;
+        height: 50px;
+        padding: 6px;
+        font-size: 14px;
+    }
+
+    /* 드롭다운 조정 */
+    .dropdown-content {
+        grid-template-columns: repeat(4, 50px);
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .dropdown-inner {
+        grid-column: span 1;
+        min-height: 50px;
+    }
+
+    /* 드롭다운 메뉴 정렬 */
+    .dropdown-inner {
+        text-align: center;
+    }
+
+    .dropdown-inner a {
+        font-size: 12px;
+        padding: 4px;
+    }
+}
+
+/* 가로 스크롤바 스타일링 */
+.menu::-webkit-scrollbar {
+    height: 4px;
+}
+
+.menu::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.menu::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 2px;
+}
+
+.menu::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
