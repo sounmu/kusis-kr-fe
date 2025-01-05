@@ -24,6 +24,4 @@ dist-ssr
 *.sw?
 
 .png
-.jpg
 .jpeg
-src/assets/images/image.jpg
