@@ -97,7 +97,7 @@ function Navbar() {
                         {activeMenu === "학과" && (
                             <div className="dropdown-inner" style={{ gridColumn: '7' }}>
                                 <a href="https://record.korea.ac.kr" target="_blank" rel="noopener noreferrer">
-                                    {'성적 조회\n시스템'}
+                                    {'성적조회\n시스템'}
                                 </a>
                             </div>
                         )}
