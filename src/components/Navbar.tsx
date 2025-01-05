@@ -1,10 +1,49 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from 'react-router-dom';
 import "./Navbar.css";
 
 function Navbar() {
     const [activeMenu, setActiveMenu] = useState<string | null>(null);
 
+    const openTimer = useRef<number | null>(null);
+    const closeTimer = useRef<number | null>(null);
+
+    const OPEN_DELAY = 150;
+    const CLOSE_DELAY = 200;
+
+    /**
+     * 메뉴에 마우스가 올라갔을 때
+     */
+    const handleMenuEnter = (menuName: string) => {
+        // 기존 닫힘 타이머가 있으면 취소
+        if (closeTimer.current) {
+            clearTimeout(closeTimer.current);
+            closeTimer.current = null;
+        }
+
+        // 일정 시간 후에 실제로 메뉴를 연다
+        openTimer.current = setTimeout(() => {
+            setActiveMenu(menuName);
+        }, OPEN_DELAY);
+    };
+
+    /**
+     * 메뉴에 마우스가 떠났을 때
+     */
+    const handleMenuLeave = () => {
+        // 기존 열림 타이머가 있으면 취소
+        if (openTimer.current) {
+            clearTimeout(openTimer.current);
+            openTimer.current = null;
+        }
+
+        // 일정 시간 후에 실제로 메뉴를 닫는다
+        closeTimer.current = setTimeout(() => {
+            setActiveMenu(null);
+        }, CLOSE_DELAY);
+    };
+
+    // (모바일 등의) 클릭 시 토글
     const toggleDropdown = (menuName: string) => {
         setActiveMenu((prev) => (prev === menuName ? null : menuName));
     };
@@ -14,44 +53,50 @@ function Navbar() {
             <div className="navbar-container">
                 <nav className="navbar">
                     <ul className="menu">
-                        <li className="menu-item col-1 col-md-3 col-sm-6"
+                        <li className="menu-item"
                             style={{ gridColumn: '1' }}
-                            onMouseEnter={() => setActiveMenu("학과")}
-                            onMouseLeave={() => setActiveMenu(null)}
+                            onMouseEnter={() => handleMenuEnter("학과")}
+                            onMouseLeave={() => handleMenuLeave()}
                             onClick={() => toggleDropdown("학과")}                    
                         >
                             학과
                         </li>
                         <li className="menu-item col-1 col-md-3 col-sm-6"
                             style={{ gridColumn: '2' }}
-                            onMouseEnter={() => setActiveMenu("학생회")}
-                            onMouseLeave={() => setActiveMenu(null)}
+                            onMouseEnter={() => handleMenuEnter("학생회")}
+                            onMouseLeave={() => handleMenuLeave()}
                             onClick={() => toggleDropdown("학생회")}
                         >
                             학생회
                         </li>
                         <li className="menu-item col-1 col-md-3 col-sm-6"
                             style={{ gridColumn: '3' }}
-                            onMouseEnter={() => setActiveMenu("새내기배움터")}
-                            onMouseLeave={() => setActiveMenu(null)}
+                            onMouseEnter={() => handleMenuEnter("새내기배움터")}
+                            onMouseLeave={() => handleMenuLeave()}
                             onClick={() => toggleDropdown("새내기배움터")}
                         >
                             {'새내기\n배움터'}
                         </li>
                         <li className="menu-item col-1 col-md-3 col-sm-6"
                             style={{ gridColumn: '4' }}
-                            onMouseEnter={() => setActiveMenu("가이드")}
-                            onMouseLeave={() => setActiveMenu(null)}
+                            onMouseEnter={() => handleMenuEnter("가이드")}
+                            onMouseLeave={() => handleMenuLeave()}
                             onClick={() => toggleDropdown("가이드")}
                         >
                             가이드
                         </li>
                     </ul>
                 </nav>
+                
+                {/* 드롭다운 배경 */}
                 <div 
                     className={`dropdown-backdrop ${activeMenu ? 'show' : ''}`}
-                    onMouseEnter={() => activeMenu && setActiveMenu(activeMenu)}
-                    onMouseLeave={() => setActiveMenu(null)}
+                    onMouseEnter={() => {
+                        if (activeMenu) {
+                            handleMenuEnter(activeMenu);
+                        }
+                    }}
+                    onMouseLeave={() => handleMenuLeave()}
                 >
                     <div className="dropdown-content">
                         {activeMenu === "학과" && (
