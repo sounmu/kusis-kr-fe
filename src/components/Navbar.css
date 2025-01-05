@@ -4,12 +4,13 @@
     font-family: 'Noto Sans KR', sans-serif;
     position: relative;
     overflow-x: auto;
-    z-index: 1000;
+    overflow-y: visible;
+    z-index: 1001;
 }
 
 .navbar-container {
     width: 100%;
-    position: relative;
+    position: static;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -79,13 +80,13 @@
 
 /* 드롭다운 배경 */
 .dropdown-backdrop {
-    position: fixed;
+    position: absolute;
     top: 180px;
     left: 0;
     right: 0;
-    width: 100%;
+    width: 100vw;
     height: auto;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.95);
     box-shadow: 
         0 4px 6px -1px rgba(0, 0, 0, 0.05),
         0 10px 15px -3px rgba(0, 0, 0, 0.05),
@@ -97,13 +98,17 @@
         opacity 0.3s ease,
         visibility 0.3s ease,
         transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 999;
+    z-index: 1000;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .dropdown-backdrop.show {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translate(-50%, 0);
 }
 
 /* 드롭다운 내용 컨테이너 */
@@ -113,7 +118,7 @@
     display: grid;
     grid-template-columns: repeat(4, 78px);
     gap: 24px;
-    padding: 0;
+    padding: 24px 0;
     justify-content: center;
 }
 
@@ -130,7 +135,7 @@
     transition: 
         opacity 0.3s ease 0.1s,
         transform 0.3s ease 0.1s;
-    height: 90px;
+    height: 70px;
 }
 
 .dropdown-inner a {
@@ -191,13 +196,16 @@
 
     /* 드롭다운 조정 */
     .dropdown-content {
-        grid-template-columns: repeat(4, 78px);
         gap: 16px;
-        padding: 16px;
+        padding: 16px 0;
+    }
+
+    .dropdown-inner {
+        height: 70px;
     }
 
     .dropdown-backdrop {
-        top: 170px;
+        top: 160px;
     }
 }
 
@@ -213,14 +221,14 @@
 
     /* 드롭다운 조정 */
     .dropdown-content {
-        grid-template-columns: repeat(4, 78px);
         gap: 12px;
-        padding: 12px;
+        padding: 12px 0;
     }
 
     .dropdown-inner {
         grid-column: span 1;
         min-height: 50px;
+        height: 70px;
     }
 
     /* 드롭다운 메뉴 정렬 */
@@ -234,7 +242,7 @@
     }
 
     .dropdown-backdrop {
-        top: 160px;
+        top: 150px;
     }
 }
 
