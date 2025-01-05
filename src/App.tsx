@@ -3,8 +3,10 @@ import Main from './components/Main';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Title from './components/Title';
-import Join from './components/Join.tsx';
-import OT from './components/OT.tsx';
+import Join from './components/Join';
+import OT from './components/OT';
+import Organizations from './components/Organizations';
+import SpecialOrganizations from './components/SpecialOrganizations';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -25,6 +27,12 @@ function App() {
 
                 {/* "/2025ot/join" 엔드포인트 */}
                 <Route path="/2025ot/join" element={<Join />} />
+
+                {/* "/organizaions/" 엔드포인트 */}
+                <Route path="/organizaions" element={<Organizations />} />
+
+                {/* "/special_organizaions/" 엔드포인트 */}
+                <Route path="/special_organizaions" element={<SpecialOrganizations />} />
               </Routes>
             </div>
           </div>
