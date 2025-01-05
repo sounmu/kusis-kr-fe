@@ -1,0 +1,16 @@
+.content-background {
+    width: 100vw;
+    background-color: #f5f5f5;
+    min-height: calc(100vh - 260px);
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+} 

@@ -29,10 +29,10 @@ function App() {
                 <Route path="/2025ot/join" element={<Join />} />
 
                 {/* "/organizaions/" 엔드포인트 */}
-                <Route path="/organizaions" element={<Organizations />} />
+                <Route path="/organizations" element={<Organizations />} />
 
                 {/* "/special_organizaions/" 엔드포인트 */}
-                <Route path="/special_organizaions" element={<SpecialOrganizations />} />
+                <Route path="/special_organizations" element={<SpecialOrganizations />} />
               </Routes>
             </div>
           </div>

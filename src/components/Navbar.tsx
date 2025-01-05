@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 import "./Navbar.css";
 
 function Navbar() {
@@ -144,9 +145,9 @@ function Navbar() {
                         )}
                         {activeMenu === "새내기배움터" && (
                             <div className="dropdown-inner" style={{ gridColumn: '7' }}>
-                                <a href="https://kusis.kr/2025ot" target="_blank" rel="noopener noreferrer">
-                                    {'새터 안내\n바로가기'}
-                                </a>
+                                <Link to="/2025ot"> 
+                                    {'새터 안내\n바로가기'} 
+                                </Link>
                             </div>
                         )}
                         {activeMenu === "가이드" && (
