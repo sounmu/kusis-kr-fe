@@ -102,12 +102,27 @@
     left: 50%;
     margin-left: 0;
     margin-right: 0;
+    
+    /* 애니메이션 추가 */
+    animation: slideDown 0.4s forwards;
 }
 
 .dropdown-backdrop.show {
     opacity: 1;
     visibility: visible;
     transform: translate(-50%, 0);
+}
+
+/* 새로운 애니메이션 키프레임 추가 */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -15px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
 }
 
 /* 드롭다운 내용 컨테이너 */
