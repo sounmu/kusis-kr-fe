@@ -1,15 +1,39 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { optimizeImage } from '../utils/imageOptimizer';
 import './Banner.css';
 
 interface BannerProps {
-    images: string[];  // 배너 이미지 URL 배열
-    autoPlayInterval?: number;  // 자동 재생 간격 (밀리초)
+    images: string[];  // 원본 이미지 URL 배열
+    autoPlayInterval?: number;
 }
 
 const Banner: React.FC<BannerProps> = ({ images, autoPlayInterval = 5000 }) => {
     const navigate = useNavigate();
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [optimizedImages, setOptimizedImages] = useState<Array<{ src: string; width: number; height: number }>>([]);
+
+    // 이미지 최적화 처리
+    useEffect(() => {
+        const optimizeImages = async () => {
+            try {
+                const optimized = await Promise.all(
+                    images.map(img => optimizeImage(img))
+                );
+                setOptimizedImages(optimized);
+            } catch (error) {
+                console.error('Image optimization failed:', error);
+                // 최적화 실패 시 원본 이미지 사용
+                setOptimizedImages(images.map(src => ({
+                    src,
+                    width: 0,
+                    height: 400
+                })));
+            }
+        };
+
+        optimizeImages();
+    }, [images]);
 
     // 자동 재생 기능
     useEffect(() => {
@@ -49,13 +73,13 @@ const Banner: React.FC<BannerProps> = ({ images, autoPlayInterval = 5000 }) => {
                 className="banner-wrapper"
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
-                {images.map((image, index) => (
+                {optimizedImages.map((image, index) => (
                     <img
                         key={index}
-                        src={image}
+                        src={image.src}
                         alt={`Banner ${index + 1}`}
                         className="banner"
-                        loading="lazy"
+                        loading={index === 0 ? "eager" : "lazy"}
                         onError={(e) => {
                             const target = e.target as HTMLImageElement;
                             target.src = '/path/to/fallback-image.jpg';

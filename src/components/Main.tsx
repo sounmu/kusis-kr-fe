@@ -1,6 +1,6 @@
 import "./Main.css";
 import Banner from "./Banner";
-import banner1 from "../assets/images/image.jpg";
+import banner1 from "../assets/images/image.webp";
 
 const Main = () => {
     const bannerImages = [
