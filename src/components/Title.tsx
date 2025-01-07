@@ -1,4 +1,5 @@
 import "./Title.css";
+import { Link } from "react-router-dom";
 
 const Title = () => {
     return (
@@ -14,7 +15,9 @@ const Title = () => {
                                     <span className="school-title-dept">School of Interdisciplinary Studies</span>
                                 </li>
                                 <li className="info-helper">
-                                    정보 도우미
+                                    <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+                                        정보 도우미
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
