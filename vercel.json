@@ -1,0 +1,14 @@
+{
+    "redirects": [
+      {
+        "source": "www.kusis.kr",
+        "destination": "https://kusis.kr",
+        "statusCode": 308
+      },
+      {
+        "source": "/(.*)",
+        "destination": "https://kusis.kr/$1",
+        "statusCode": 308
+      }
+    ]
+  }
