@@ -46,7 +46,12 @@ function Navbar() {
 
     // (모바일 등의) 클릭 시 토글
     const toggleDropdown = (menuName: string) => {
-        setActiveMenu((prev) => (prev === menuName ? null : menuName));
+        setActiveMenu(menuName);
+        
+        // 같은 메뉴를 다시 클릭했을 때만 닫기
+        if (activeMenu === menuName) {
+            setActiveMenu(null);
+        }
     };
 
     return (

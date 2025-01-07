@@ -102,12 +102,27 @@
     left: 50%;
     margin-left: 0;
     margin-right: 0;
+    
+    /* 애니메이션 추가 */
+    animation: slideDown 0.4s forwards;
 }
 
 .dropdown-backdrop.show {
     opacity: 1;
     visibility: visible;
     transform: translate(-50%, 0);
+}
+
+/* 새로운 애니메이션 키프레임 추가 */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -15px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
 }
 
 /* 드롭다운 내용 컨테이너 */
@@ -206,6 +221,12 @@
     .dropdown-backdrop {
         top: 160px;
     }
+
+    /* 구분선 위치 조정 */
+    .menu-item:not(:last-child)::after {
+        right: -8px;  /* 모바일에서 간격에 맞게 조정 */
+        height: 16px;  /* 구분선 높이 조정 */
+    }
 }
 
 @media (max-width: 480px) {
@@ -242,6 +263,12 @@
 
     .dropdown-backdrop {
         top: 160px;
+    }
+
+    /* 구분선 위치 조정 */
+    .menu-item:not(:last-child)::after {
+        right: -6px;  /* 모바일에서 간격에 맞게 조정 */
+        height: 16px;  /* 구분선 높이 조정 */
     }
 }
 
