@@ -6,10 +6,17 @@ interface DropdownBackdropProps {
     activeMenu: string | null;
     handleMenuEnter: (menuName: string) => void;
     handleMenuLeave: () => void;
+    setActiveMenu: (menu: string | null) => void;
 }
 
-const DropdownBackDrop: React.FC<DropdownBackdropProps> = ({ activeMenu, handleMenuEnter, handleMenuLeave }) => {
+const DropdownBackDrop: React.FC<DropdownBackdropProps> = ({ activeMenu, handleMenuEnter, handleMenuLeave, setActiveMenu }) => {
     if (!activeMenu) return null;
+
+    const handleLinkClick = (e: React.MouseEvent) => {
+        e.stopPropagation();  // 이벤트 버블링 방지
+        setActiveMenu(null);
+        handleMenuLeave();    // 명시적으로 메뉴 닫기 핸들러 호출
+    };
 
     return ReactDom.createPortal(
         <div className={`dropdown-backdrop ${activeMenu ? 'show' : ''}`}
@@ -103,7 +110,7 @@ const DropdownBackDrop: React.FC<DropdownBackdropProps> = ({ activeMenu, handleM
                 )}
                 {activeMenu === "새내기배움터" && (
                     <div className="dropdown-inner" style={{ gridColumn: '3' }}>
-                        <Link to="/2025ot"> 
+                        <Link to="/2025ot" onClick={handleLinkClick}> 
                             {'새터 안내\n바로가기'} 
                         </Link>
                     </div>

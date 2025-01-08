@@ -101,6 +101,7 @@ function Navbar() {
                 activeMenu={activeMenu}
                 handleMenuEnter={handleMenuEnter}
                 handleMenuLeave={handleMenuLeave}
+                setActiveMenu={setActiveMenu}
             />
         </>
     );
