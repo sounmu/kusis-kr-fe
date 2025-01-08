@@ -12,5 +12,192 @@
 .main-content {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 20px;
+}
+
+.category-nav {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.category-btn {
+    padding: 8px 16px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.category-btn.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.content-wrapper {
+    display: flex;
+    padding: 0px 20px;
+    gap: 20px;
+}
+
+.posts-content {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.post-card {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+}
+
+.post-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.post-card h3 {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.sidebar {
+    width: 250px;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sidebar h3 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #007bff;
+}
+
+.sidebar ul {
+    list-style: none;
     padding: 0;
+    margin: 0;
+}
+
+.sidebar-item {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.sidebar-item:hover {
+    background-color: #f0f0f0;
+}
+
+.sidebar-item.active {
+    background-color: #e3f2fd;
+    color: #007bff;
+}
+
+.post-detail {
+    padding: 20px;
+}
+
+.post-detail h2 {
+    margin-bottom: 20px;
+}
+
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.post-content p {
+    line-height: 1.6;
+}
+
+@media screen and (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+        padding: 0px 10px;
+    
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+
+    .posts-content {
+        padding: 15px 15px;
+    }
+
+    .category-nav {
+        padding: 10px 10px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+    }
+
+    .category-nav::-webkit-scrollbar {
+        height: 5px;
+    }
+
+    .category-nav::-webkit-scrollbar-track {
+        background: #ddd;
+    }
+
+    .category-nav::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    .posts-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    .post-card h3 {
+        font-size: 16px;
+        margin: 8px 0;
+    }
+
+    .post-content p {
+        font-size: 14px;
+    }
+
+    .sidebar-item {
+        font-size: 14px;
+    }
+
+    .post-detail h2 {
+        font-size: 18px;
+    }
+
+    .category-btn {
+        font-size: 14px;
+        white-space: nowrap;
+    }
 } 
