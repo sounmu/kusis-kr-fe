@@ -14,7 +14,7 @@ function OT() {
     const [selectedPost, setSelectedPost] = useState<Post | null>(null);
 
     // 임시 데이터
-    const categories = ['전체', '신입생 OT', '간부 수련회', '동아리 박람회'];
+    const categories = ['전체', '신청하기', '공지사항', '카드뉴스'];
     const posts: Post[] = [
         {
             id: 1,

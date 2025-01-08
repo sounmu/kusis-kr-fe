@@ -39,13 +39,14 @@
 
 .content-wrapper {
     display: flex;
+    padding: 0px 20px;
     gap: 20px;
 }
 
 .posts-content {
     flex: 1;
     background: white;
-    padding: 30px;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -53,7 +54,7 @@
 .posts-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 15px;
 }
 
 .post-card {
@@ -138,6 +139,8 @@
 @media screen and (max-width: 768px) {
     .content-wrapper {
         flex-direction: column;
+        padding: 0px 10px;
+    
     }
 
     .sidebar {
@@ -149,16 +152,52 @@
     }
 
     .posts-content {
-        padding: 15px 20px;
+        padding: 15px 15px;
     }
 
     .category-nav {
-        padding: 10px;
+        padding: 10px 10px;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+    }
+
+    .category-nav::-webkit-scrollbar {
+        height: 5px;
+    }
+
+    .category-nav::-webkit-scrollbar-track {
+        background: #ddd;
+    }
+
+    .category-nav::-webkit-scrollbar-thumb {
+        background: #888;
     }
 
     .posts-grid {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    .post-card h3 {
+        font-size: 16px;
+        margin: 8px 0;
+    }
+
+    .post-content p {
+        font-size: 14px;
+    }
+
+    .sidebar-item {
+        font-size: 14px;
+    }
+
+    .post-detail h2 {
+        font-size: 18px;
+    }
+
+    .category-btn {
+        font-size: 14px;
+        white-space: nowrap;
     }
 } 
