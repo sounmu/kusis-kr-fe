@@ -27,7 +27,7 @@ function PostDetail({ posts, categories, onCategoryClick }: PostDetailProps) {
                 {post.images?.map((image, index) => (
                     <img key={index} src={image} alt={`post-image-${index}`} />
                 ))}
-                <p>{post.content}</p>
+                <p dangerouslySetInnerHTML={{ __html: post.content.replace(/\n/g, '<br/>') }} />
             </div>
         </div>
     );
