@@ -11,7 +11,7 @@ const Calendar = ({ events }: CalendarProps) => {
     const [selectedYear, setSelectedYear] = useState(currentYear);
     const [currentDate, setCurrentDate] = useState(new Date());
 
-    const years = Array.from({ length: 10 }, (_, i) => currentYear + i);
+    const years = Array.from({ length: 2 }, (_, i) => currentYear + i);
 
     const handleYearChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const newYear = parseInt(event.target.value);
@@ -58,17 +58,13 @@ const Calendar = ({ events }: CalendarProps) => {
                     <div className="day-number">{day}</div>
                     <div className="day-events">
                         {dayEvents.map(event => (
-                            <div key={event.id} 
-                                 className="event-bar"
-                                 style={{
-                                     width: '100%',
-                                 }}>
+                            <div key={event.id} className="event-bar">
                                 {event.link ? (
                                     <a href={event.link} className="event-link">
-                                        {event.title}
+                                        <span className="event-text">{event.title}</span>
                                     </a>
                                 ) : (
-                                    <span>{event.title}</span>
+                                    <span className="event-text">{event.title}</span>
                                 )}
                             </div>
                         ))}

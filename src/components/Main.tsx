@@ -11,16 +11,16 @@ const Main = () => {
     const events = [
         {
             id: '1',
-            startDate: new Date(2025, 1, 1),
-            endDate: new Date(2025, 1, 12),
-            title: '행사 1',
+            startDate: new Date(2025, 0, 2),
+            endDate: new Date(2025, 0, 31),
+            title: '정의장학금 1차 신청',
             link: 'https://example.com/event1'
         },
         {
             id: '2',
-            startDate: new Date(2024, 2, 5),
-            endDate: new Date(2024, 2, 5),
-            title: '행사 2'
+            startDate: new Date(2025, 0, 17),
+            endDate: new Date(2025, 0, 17),
+            title: '겨울계절수업 종강'
         }
     ];
 
