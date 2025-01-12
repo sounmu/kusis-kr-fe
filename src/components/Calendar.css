@@ -14,16 +14,52 @@
     margin-bottom: 20px;
 }
 
-.calendar-header button {
-    padding: 8px 16px;
-    border: none;
-    background-color: #f0f0f0;
-    cursor: pointer;
-    border-radius: 4px;
+.calendar-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-.calendar-header button:hover {
-    background-color: #e0e0e0;
+.year-select {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.month-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.calendar-arrow {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    padding: 0;
+}
+
+.calendar-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.calendar-arrow.left {
+    margin-right: 5px;
+}
+
+.calendar-arrow.right {
+    margin-left: 5px;
 }
 
 .calendar-grid {
@@ -109,5 +145,20 @@
 
     .event-bar {
         font-size: 11px;
+    }
+
+    .calendar-controls {
+        gap: 10px;
+    }
+
+    .year-select {
+        font-size: 14px;
+        padding: 3px 8px;
+    }
+
+    .calendar-arrow {
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
     }
 }

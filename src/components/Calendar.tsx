@@ -7,7 +7,25 @@ interface CalendarProps {
 }
 
 const Calendar = ({ events }: CalendarProps) => {
+    const currentYear = new Date().getFullYear();
+    const [selectedYear, setSelectedYear] = useState(currentYear);
     const [currentDate, setCurrentDate] = useState(new Date());
+
+    const years = Array.from({ length: 10 }, (_, i) => currentYear + i);
+
+    const handleYearChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        const newYear = parseInt(event.target.value);
+        setSelectedYear(newYear);
+        setCurrentDate(new Date(newYear, currentDate.getMonth(), 1));
+    };
+
+    const changeMonth = (increment: number) => {
+        setCurrentDate(new Date(currentDate.setMonth(currentDate.getMonth() + increment)));
+    };
+
+    // 현재 월이 1월이나 12월인지 확인
+    const isFirstMonth = currentDate.getMonth() === 0;
+    const isLastMonth = currentDate.getMonth() === 11;
 
     const getDaysInMonth = (date: Date) => {
         return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
@@ -62,16 +80,41 @@ const Calendar = ({ events }: CalendarProps) => {
         return days;
     };
 
-    const changeMonth = (increment: number) => {
-        setCurrentDate(new Date(currentDate.setMonth(currentDate.getMonth() + increment)));
-    };
-
     return (
         <div className="calendar-container">
             <div className="calendar-header">
-                <button onClick={() => changeMonth(-1)}>&lt;</button>
-                <h2>{currentDate.getFullYear()}년 {currentDate.getMonth() + 1}월</h2>
-                <button onClick={() => changeMonth(1)}>&gt;</button>
+                <div className="calendar-controls">
+                    <select 
+                        value={selectedYear}
+                        onChange={handleYearChange}
+                        className="year-select"
+                    >
+                        {years.map(year => (
+                            <option key={year} value={year}>
+                                {year}년
+                            </option>
+                        ))}
+                    </select>
+                    <h2>{currentDate.getMonth() + 1}월</h2>
+                    <div className="month-controls">
+                        {!isFirstMonth && (
+                            <button 
+                                onClick={() => changeMonth(-1)} 
+                                className="calendar-arrow left"
+                            >
+                                &#8249;
+                            </button>
+                        )}
+                        {!isLastMonth && (
+                            <button 
+                                onClick={() => changeMonth(1)} 
+                                className="calendar-arrow right"
+                            >
+                                &#8250;
+                            </button>
+                        )}
+                    </div>
+                </div>
             </div>
             <div className="calendar-grid">
                 <div className="weekday">일</div>
