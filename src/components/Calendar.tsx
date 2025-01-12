@@ -84,6 +84,23 @@ const Calendar = ({ events }: CalendarProps) => {
         <div className="calendar-container">
             <div className="calendar-header">
                 <div className="calendar-controls">
+                    <div className="month-display">
+                        <button 
+                            onClick={() => changeMonth(-1)} 
+                            className={`calendar-arrow left ${isFirstMonth ? 'disabled' : ''}`}
+                            disabled={isFirstMonth}
+                        >
+                            &#8249;
+                        </button>
+                        <h2>{currentDate.getFullYear()}년 {currentDate.getMonth() + 1}월</h2>
+                        <button 
+                            onClick={() => changeMonth(1)} 
+                            className={`calendar-arrow right ${isLastMonth ? 'disabled' : ''}`}
+                            disabled={isLastMonth}
+                        >
+                            &#8250;
+                        </button>
+                    </div>
                     <select 
                         value={selectedYear}
                         onChange={handleYearChange}
@@ -95,25 +112,6 @@ const Calendar = ({ events }: CalendarProps) => {
                             </option>
                         ))}
                     </select>
-                    <h2>{currentDate.getMonth() + 1}월</h2>
-                    <div className="month-controls">
-                        {!isFirstMonth && (
-                            <button 
-                                onClick={() => changeMonth(-1)} 
-                                className="calendar-arrow left"
-                            >
-                                &#8249;
-                            </button>
-                        )}
-                        {!isLastMonth && (
-                            <button 
-                                onClick={() => changeMonth(1)} 
-                                className="calendar-arrow right"
-                            >
-                                &#8250;
-                            </button>
-                        )}
-                    </div>
                 </div>
             </div>
             <div className="calendar-grid">
