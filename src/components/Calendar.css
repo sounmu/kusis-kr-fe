@@ -137,14 +137,11 @@
 .event-bar {
     display: flex;
     align-items: center;
-
-    background-color: #e3f2fd;
     padding: 2px 5px;
     font-size: 12px;
     border-radius: 3px;
     gap: 5px;
     box-sizing: border-box;
-
     min-width: 0;
     max-width: 100%;
 }
@@ -278,4 +275,56 @@
 
 .calendar-arrow.disabled:hover {
     background-color: rgba(0, 0, 0, 0.5);  /* hover 효과 제거 */
+}
+
+/* Event Colors */
+.event-color-0 { background-color: #E3F2FD; } /* 하늘색 계열 */
+.event-color-1 { background-color: #F3E5F5; } /* 연보라색 */
+.event-color-2 { background-color: #E8F5E9; } /* 연두색 */
+.event-color-3 { background-color: #FFF3E0; } /* 살구색 */
+.event-color-4 { background-color: #F1F8E9; } /* 라임색 */
+.event-color-5 { background-color: #E0F7FA; } /* 민트색 */
+.event-color-6 { background-color: #FCE4EC; } /* 연분홍색 */
+.event-color-7 { background-color: #FFF8E1; } /* 레몬색 */
+.event-color-8 { background-color: #E8EAF6; } /* 라벤더색 */
+.event-color-9 { background-color: #EFEBE9; } /* 베이지색 */
+
+.events-summary {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+}
+
+.event-summary-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.event-dot {
+    font-size: 20px;
+    line-height: 1;
+    color: #666;
+}
+
+.event-summary-title {
+    font-weight: 500;
+}
+
+.event-summary-date {
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .events-summary {
+        margin-top: 15px;
+        padding-top: 10px;
+    }
+
+    .event-summary-item {
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
 }

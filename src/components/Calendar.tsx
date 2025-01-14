@@ -58,7 +58,7 @@ const Calendar = ({ events }: CalendarProps) => {
                     <div className="day-number">{day}</div>
                     <div className="day-events">
                         {dayEvents.map(event => (
-                            <div key={event.id} className="event-bar">
+                            <div key={event.id} className={`event-bar event-color-${event.colorIndex}`}>
                                 {event.link ? (
                                     <a href={event.link} className="event-link">
                                         <span className="event-text">{event.title}</span>
@@ -74,6 +74,13 @@ const Calendar = ({ events }: CalendarProps) => {
         }
 
         return days;
+    };
+
+    const formatDate = (date: Date) => {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        return `${year}.${month}.${day}`;
     };
 
     return (
@@ -119,6 +126,18 @@ const Calendar = ({ events }: CalendarProps) => {
                 <div className="weekday">금</div>
                 <div className="weekday">토</div>
                 {generateCalendarDays()}
+            </div>
+            
+            <div className="events-summary">
+                {events.map(event => (
+                    <div key={event.id} className="event-summary-item">
+                        <span className="event-dot">•</span>
+                        <span className="event-summary-title">{event.title}</span>
+                        <span className="event-summary-date">
+                            {formatDate(event.startDate)} ~ {formatDate(event.endDate)}
+                        </span>
+                    </div>
+                ))}
             </div>
         </div>
     );

@@ -12,4 +12,5 @@ export interface CalendarEvent {
     endDate: Date;
     title: string;
     link?: string;
+    colorIndex: number;
 } 
