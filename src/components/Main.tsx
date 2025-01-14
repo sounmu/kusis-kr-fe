@@ -44,7 +44,14 @@ const Main = () => {
             endDate: new Date(2025, 0, 20),
             title: '메토링 지원 기간',
             colorIndex: 4
-        }
+        },
+        {
+            id: '6',
+            startDate: new Date(2025, 0, 21),
+            endDate: new Date(2025, 0, 21),
+            title: '아 맞다 군휴학 신청하기',
+            colorIndex: 5
+        },
     ];
 
     return (
