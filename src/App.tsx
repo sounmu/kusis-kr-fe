@@ -22,8 +22,8 @@ function App() {
                 {/* "/" 엔드포인트 */}
                 <Route path="/" element={<Main />} />
 
-                {/* "/2025ot/" 엔드포인트 */}
-                <Route path="/2025ot" element={<OT />} />
+                {/* "/2025ot/*" 엔드포인트 */}
+                <Route path="/2025ot/*" element={<OT />} />
 
                 {/* "/2025ot/join" 엔드포인트 */}
                 <Route path="/2025ot/join" element={<Join />} />

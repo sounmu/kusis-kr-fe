@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+.calendar-container {
+    width: calc(100% - 40px);
+    margin: 20px auto 0;
+    padding: 20px 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-family: 'Noto Sans KR', sans-serif;
+    overflow: hidden;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+}
+
+.month-display {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 화살표 공간 유지를 위한 더미 요소 */
+.month-display::before,
+.month-display::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    visibility: hidden;
+}
+
+.month-display h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    min-width: 120px;
+    text-align: center;
+}
+
+.year-select {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    min-width: 100px;
+    margin-left: auto;
+    z-index: 1;
+}
+
+.month-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.calendar-arrow {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    padding: 0;
+}
+
+.calendar-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* 화살표 위치 조정 */
+.calendar-arrow.left {
+    margin-right: 5px;
+}
+
+.calendar-arrow.right {
+    margin-left: 5px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 1px;
+    background-color: #ddd;
+    border: 1px solid #ddd;
+    width: 100%;
+}
+
+.weekday {
+    background-color: #f5f5f5;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.calendar-day {
+    background-color: white;
+    min-height: 100px;
+    padding: 5px;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.day-number {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.day-events {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 100%;
+}
+
+.event-bar {
+    display: flex;
+    align-items: center;
+    padding: 2px 5px;
+    font-size: 12px;
+    border-radius: 3px;
+    gap: 5px;
+    box-sizing: border-box;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.event-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    flex: 1;
+    min-width: 0;
+}
+
+
+.event-link {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    color: #1976d2;
+    text-decoration: none;
+}
+
+.event-link:hover {
+    text-decoration: underline;
+}
+
+.empty {
+    background-color: #f9f9f9;
+}
+
+@media (max-width: 768px) {
+    .calendar-container {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-top: 15px;
+    }
+
+    .calendar-grid {
+        font-size: 12px;
+        gap: 1px;
+        border: 1px solid #ddd;
+    }
+
+    .weekday {
+        padding: 5px;
+    }
+
+    .calendar-day {
+        padding: 2px;
+        border-right: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        min-height: 60px;
+    }
+
+    .weekday {
+        display: block;
+        font-size: 14px;
+    }
+
+    .day-number {
+        font-size: 12px;
+    }
+
+    .event-bar {
+        background-color: #e3f2fd;
+        padding: 2px 5px;
+        width: 100% !important;
+        justify-content: flex-start;
+        font-size: 10px;
+    }
+
+    .calendar-controls {
+        gap: 10px;
+    }
+
+    .month-display {
+        gap: 5px;
+    }
+
+    .month-display h2 {
+        font-size: 1rem;
+        min-width: 90px;
+    }
+
+    .year-select {
+        font-size: 14px;
+        padding: 3px 8px;
+        min-width: 80px;
+    }
+
+    .calendar-arrow {
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+    }
+
+    .calendar-arrow.left {
+        margin-right: 2px;
+    }
+
+    .calendar-arrow.right {
+        margin-left: 2px;
+    }
+
+    .month-display::before,
+    .month-display::after {
+        width: 25px;
+        height: 25px;
+    }
+
+    .event-text {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .day-events {
+        margin-top: 2px;
+    }
+}
+
+.calendar-arrow.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.calendar-arrow.disabled:hover {
+    background-color: rgba(0, 0, 0, 0.5);  /* hover 효과 제거 */
+}
+
+/* Event Colors */
+.event-color-0 { background-color: #E3F2FD; } /* 하늘색 계열 */
+.event-color-1 { background-color: #F3E5F5; } /* 연보라색 */
+.event-color-2 { background-color: #E8F5E9; } /* 연두색 */
+.event-color-3 { background-color: #FFF3E0; } /* 살구색 */
+.event-color-4 { background-color: #F1F8E9; } /* 라임색 */
+.event-color-5 { background-color: #E0F7FA; } /* 민트색 */
+.event-color-6 { background-color: #FCE4EC; } /* 연분홍색 */
+.event-color-7 { background-color: #FFF8E1; } /* 레몬색 */
+.event-color-8 { background-color: #E8EAF6; } /* 라벤더색 */
+.event-color-9 { background-color: #EFEBE9; } /* 베이지색 */
+
+.events-summary {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+}
+
+.event-summary-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.event-dot {
+    font-size: 20px;
+    line-height: 1;
+    color: #666;
+}
+
+.event-summary-title {
+    font-weight: 500;
+}
+
+.event-summary-date {
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .events-summary {
+        margin-top: 15px;
+        padding-top: 10px;
+    }
+
+    .event-summary-item {
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
+}
