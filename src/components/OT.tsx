@@ -102,8 +102,6 @@ function OT() {
                             <Route path="/:id" element={
                                 <PostDetail 
                                     posts={posts}
-                                    categories={categories}
-                                    onCategoryClick={handleCategoryClick}
                                 />
                             } />
                         </Routes>

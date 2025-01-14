@@ -3,11 +3,9 @@ import { Post } from '../types';
 
 interface PostDetailProps {
     posts: Post[];
-    categories: string[];
-    onCategoryClick: (category: string) => void;
 }
 
-function PostDetail({ posts, categories, onCategoryClick }: PostDetailProps) {
+function PostDetail({ posts }: PostDetailProps) {
     const { id } = useParams();
     const navigate = useNavigate();
     
