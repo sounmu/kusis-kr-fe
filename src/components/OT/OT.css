@@ -12,7 +12,7 @@
 .main-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
 }
 
 .category-nav {
@@ -157,7 +157,7 @@
     }
 
     .main-content {
-        padding: 10px;
+        padding: 5px;
     }
 
     .posts-content {

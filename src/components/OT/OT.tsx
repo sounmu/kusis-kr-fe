@@ -107,20 +107,7 @@ function OT() {
                         </Routes>
                     </div>
                     
-                    <div className="sidebar">
-                        <h3>목차</h3>
-                        <ul>
-                            {posts.map(post => (
-                                <li 
-                                    key={post.id}
-                                    className={`sidebar-item ${location.pathname === `/2025ot/${post.id}` ? 'active' : ''}`}
-                                    onClick={() => navigate(`/2025ot/${post.id}`)}
-                                >
-                                    {post.title}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                    
                 </div>
             </div>
         </div>
