@@ -35,6 +35,7 @@ function CategoryNav({ categories, onCategoryClick, selectedCategory, isDetailPa
 function OT() {
     const [selectedCategory, setSelectedCategory] = useState('전체');
     const [posts, setPosts] = useState<PostSummary[]>([]); // 게시글 목록 상태 추가 및 타입 정의
+    const [postsCache, setPostsCache] = useState<Record<string, PostSummary[]>>({});
     const navigate = useNavigate();
     const location = useLocation();
     const isDetailPage = location.pathname.split('/').length > 2;
@@ -45,6 +46,11 @@ function OT() {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
+                // 캐시에 데이터가 있는 경우 재사용
+                if (postsCache[selectedCategory]) {
+                    setPosts(postsCache[selectedCategory]);
+                    return;
+                }
                 let categoryParam = '';
                 if (selectedCategory === '전체') {
                     categoryParam = ''; // "전체" 선택 시 category 파라미터 없이 요청
@@ -67,7 +73,13 @@ function OT() {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const data = await response.json();
-                console.log("API Response Data:", data);
+                
+                // 캐시 업데이트 추가
+                setPostsCache(prev => ({
+                    ...prev,
+                    [selectedCategory]: data.data
+                }));
+                
                 setPosts(data.data);
             } catch (error) {
                 console.error("Failed to fetch posts:", error);
