@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import './OT.css';
-import PostDetail from './PostDetail';
-import image_1 from "/src/assets/images/image_1.png";
-import image_2 from "/src/assets/images/image_2.png";
+import ContentDetail from './ContentDetail.tsx';
 
 interface PostSummary { // 게시글 요약 정보 타입 정의
     post_number: number;
@@ -12,19 +10,6 @@ interface PostSummary { // 게시글 요약 정보 타입 정의
     category: string;
 }
 
-interface PostDetailType { // 게시글 상세 정보 타입 정의 (PostDetail.tsx 에서 사용될 것으로 예상)
-    content_id: string;
-    post_number: number;
-    title: string;
-    contents: string;
-    images: string[];
-    created_at: string; // 또는 Date 객체로 필요에 따라 변경
-    updated_at: string; // 또는 Date 객체로 필요에 따라 변경
-    is_deleted: boolean;
-    category: string;
-}
-
-const images = [image_1, image_2];
 
 function CategoryNav({ categories, onCategoryClick, selectedCategory, isDetailPage }: {
     categories: string[];
@@ -128,12 +113,7 @@ function OT() {
                                 </div>
                             } />
                             <Route path="/:id" element={
-                                <PostDetail
-                                    // PostDetail 컴포넌트에 필요한 props를 전달합니다.
-                                    // 예시: <PostDetail posts={posts} /> 또는 개별 게시글 상세 정보를 API에서 다시 불러오는 로직 구현
-                                    // 현재 PostDetail 컴포넌트 코드가 제공되지 않아,  posts를 prop으로 전달하는 것으로 가정했습니다.
-                                    // 필요에 따라 PostDetail 컴포넌트와 연동되는 API 호출 및 데이터 처리 로직을 PostDetail.tsx 또는 OT.tsx 내에 구현해야 합니다.
-                                    posts={posts as any} // 임시 타입 casting, PostDetail 컴포넌트 props 타입에 맞춰 수정 필요
+                                <ContentDetail
                                 />
                             } />
                         </Routes>

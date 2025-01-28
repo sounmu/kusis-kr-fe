@@ -1,0 +1,30 @@
+.post-detail-container {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.post-detail-container h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.post-category, .post-date {
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.post-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.post-content {
+    line-height: 1.6;
+}
+
+/* 필요에 따라 추가 스타일 */ 
