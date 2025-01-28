@@ -6,8 +6,8 @@ import DropdownBackDrop from "./DropdownBackdrop.tsx";
 function Navbar() {
     const [activeMenu, setActiveMenu] = useState<string | null>(null);
 
-    const openTimer = useRef<number | null>(null);
-    const closeTimer = useRef<number | null>(null);
+    const openTimer = useRef<NodeJS.Timeout | null>(null);
+    const closeTimer = useRef<NodeJS.Timeout | null>(null);
 
     const OPEN_DELAY = 150;
     const CLOSE_DELAY = 200;
