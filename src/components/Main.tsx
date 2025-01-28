@@ -1,6 +1,6 @@
 import "./Main.css";
-import Banner from "./Banner";
-import Calendar from "./Calendar";
+import Banner from "./Banner/Banner";
+import Calendar from "./Calendar/Calendar";
 import banner1 from "/src/assets/images/image.webp";
 
 const Main = () => {

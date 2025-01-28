@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import "./Navbar.css";
-import DropdownBackDrop from "./DropdownBackdrop";
+import DropdownBackDrop from "../DropdownBackdrop";
 
 
 function Navbar() {

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CalendarEvent } from '../types';
+import { CalendarEvent } from '../../types';
 import './Calendar.css';
 
 interface CalendarProps {
