@@ -25,6 +25,7 @@
 
 .post-content {
     line-height: 1.6;
+    white-space: pre-wrap;
 }
 
 /* 필요에 따라 추가 스타일 */ 

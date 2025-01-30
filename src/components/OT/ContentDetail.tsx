@@ -70,7 +70,11 @@ function PostDetail({}: PostDetailProps) {
                 <img key={index} src={imageUrl} alt={`Post image ${index + 1}`} className="post-image" />
             ))}
 
-            <div className="post-content" dangerouslySetInnerHTML={{ __html: postDetail.contents }} />
+            <div className="post-content">
+                {postDetail.contents.split('\n').map((line, index) => (
+                    <p key={index}>{line}</p>
+                ))}
+            </div>
         </div>
     );
 }
