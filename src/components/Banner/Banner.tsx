@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { optimizeImage } from '../utils/imageOptimizer';
+import { optimizeImage } from '../../utils/imageOptimizer';
 import './Banner.css';
 
 interface BannerProps {

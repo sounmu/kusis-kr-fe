@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CalendarEvent } from '../types';
+import { CalendarEvent } from '../../types';
 import './Calendar.css';
 
 interface CalendarProps {
@@ -83,6 +83,20 @@ const Calendar = ({ events }: CalendarProps) => {
         return `${year}.${month}.${day}`;
     };
 
+    // 현재 달의 이벤트만 필터링하는 함수 추가
+    const getCurrentMonthEvents = () => {
+        const firstDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+        const lastDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
+        
+        return events.filter(event => {
+            const eventStart = new Date(event.startDate);
+            const eventEnd = new Date(event.endDate);
+            return (
+                (eventStart <= lastDayOfMonth && eventEnd >= firstDayOfMonth)
+            );
+        });
+    };
+
     return (
         <div className="calendar-container">
             <div className="calendar-header">
@@ -129,15 +143,24 @@ const Calendar = ({ events }: CalendarProps) => {
             </div>
             
             <div className="events-summary">
-                {events.map(event => (
-                    <div key={event.id} className="event-summary-item">
-                        <span className="event-dot">•</span>
-                        <span className="event-summary-title">{event.title}</span>
-                        <span className="event-summary-date">
-                            {formatDate(event.startDate)} ~ {formatDate(event.endDate)}
-                        </span>
-                    </div>
-                ))}
+                {getCurrentMonthEvents().map(event => {
+                    const startDate = new Date(event.startDate);
+                    const endDate = new Date(event.endDate);
+                    const isSameDay = startDate.getTime() === endDate.getTime();
+
+                    return (
+                        <div key={event.id} className="event-summary-item">
+                            <span className="event-dot">•</span>
+                            <span className="event-summary-title">{event.title}</span>
+                            <span className="event-summary-date">
+                                {isSameDay 
+                                    ? formatDate(startDate)
+                                    : `${formatDate(startDate)} ~ ${formatDate(endDate)}`
+                                }
+                            </span>
+                        </div>
+                    );
+                })}
             </div>
         </div>
     );
