@@ -6,6 +6,7 @@
     overflow: hidden;
     aspect-ratio: 16 / 9;
     cursor: pointer;
+    border-radius: 8px;
 }
 
 .banner-wrapper {
