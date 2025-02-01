@@ -56,45 +56,41 @@ function Navbar() {
 
     return (
         <>
-            <div className="navbar-wrapper">
-                <div className="navbar-container">
-                    <nav className="navbar">
-                        <ul className="menu">
-                            <li className="menu-item"
-                                style={{ gridColumn: '1' }}
-                                onMouseEnter={() => handleMenuEnter("학과")}
-                                onMouseLeave={() => handleMenuLeave()}
-                                onClick={() => toggleDropdown("학과")}                    
-                            >
-                                학과
-                            </li>
-                            <li className="menu-item"
-                                style={{ gridColumn: '2' }}
-                                onMouseEnter={() => handleMenuEnter("학생회")}
-                                onMouseLeave={() => handleMenuLeave()}
-                                onClick={() => toggleDropdown("학생회")}
-                            >
-                                학생회
-                            </li>
-                            <li className="menu-item"
-                                style={{ gridColumn: '3' }}
-                                onMouseEnter={() => handleMenuEnter("새내기배움터")}
-                                onMouseLeave={() => handleMenuLeave()}
-                                onClick={() => toggleDropdown("새내기배움터")}
-                            >
-                                {'새내기\n배움터'}
-                            </li>
-                            <li className="menu-item"
-                                style={{ gridColumn: '4' }}
-                                onMouseEnter={() => handleMenuEnter("가이드")}
-                                onMouseLeave={() => handleMenuLeave()}
-                                onClick={() => toggleDropdown("가이드")}
-                            >
-                                가이드
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+            <div className="navbar-container">
+                <ul className="menu">
+                    <li className="menu-item"
+                        style={{ gridColumn: '5' }}
+                        onMouseEnter={() => handleMenuEnter("학과")}
+                        onMouseLeave={() => handleMenuLeave()}
+                        onClick={() => toggleDropdown("학과")}
+                    >
+                        학과
+                    </li>
+                    <li className="menu-item"
+                        style={{ gridColumn: '6' }}
+                        onMouseEnter={() => handleMenuEnter("학생회")}
+                        onMouseLeave={() => handleMenuLeave()}
+                        onClick={() => toggleDropdown("학생회")}
+                    >
+                        학생회
+                    </li>
+                    <li className="menu-item"
+                        style={{ gridColumn: '7' }}
+                        onMouseEnter={() => handleMenuEnter("새내기배움터")}
+                        onMouseLeave={() => handleMenuLeave()}
+                        onClick={() => toggleDropdown("새내기배움터")}
+                    >
+                        {'새내기\n배움터'}
+                    </li>
+                    <li className="menu-item"
+                        style={{ gridColumn: '8' }}
+                        onMouseEnter={() => handleMenuEnter("가이드")}
+                        onMouseLeave={() => handleMenuLeave()}
+                        onClick={() => toggleDropdown("가이드")}
+                    >
+                        가이드
+                    </li>
+                </ul>
             </div>
             {/* 드랍다운 배경을 navbar-wrapper 외부에 렌더링 */}
             <DropdownBackDrop

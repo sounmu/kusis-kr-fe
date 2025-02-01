@@ -1,7 +1,6 @@
 import './App.css';
 import Main from './components/Main.tsx';
 import Footer from './components/Footer/Footer.tsx';
-import Navbar from './components/Navbar/Navbar.tsx';
 import Title from './components/Title/Title.tsx';
 import Apply from './components/Apply.tsx';
 import OT from './components/OT/OT.tsx';
@@ -15,7 +14,6 @@ function App() {
       <div className="app">
         <div className="main-content">
           <Title />
-          <Navbar />
           <div className="grid-container">
             <div className="col-12 col-md-12 col-sm-12">
               <Routes>
