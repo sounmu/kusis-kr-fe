@@ -1,12 +1,8 @@
 import "./Main.css";
-import Banner from "./Banner/Banner.tsx";
 import Calendar from "./Calendar/Calendar.tsx";
-import banner1 from "/src/assets/images/image.webp";
+import Apply from "./Apply/Apply.tsx";
 
 const Main = () => {
-    const bannerImages = [
-        banner1,
-    ];
 
     const events = [
         {
@@ -55,9 +51,9 @@ const Main = () => {
     ];
 
     return (
-        <div className="content-background">
+        <div className="main-content-background">
             <div className="main-content">
-                <Banner images={bannerImages} />
+                <Apply />
                 <Calendar events={events} />
             </div>
         </div>
