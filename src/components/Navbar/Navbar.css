@@ -274,3 +274,8 @@
 .navbar-wrapper::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+
+/* New active state styling: Only change text color on click */
+.menu-item.active {
+    color: #007bff;
+}

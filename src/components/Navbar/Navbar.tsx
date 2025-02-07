@@ -58,7 +58,7 @@ function Navbar() {
         <>
             <div className="navbar-container">
                 <ul className="menu">
-                    <li className="menu-item"
+                    <li className={`menu-item ${activeMenu === "학과" ? "active" : ""}`}
                         style={{ gridColumn: '5' }}
                         onMouseEnter={() => handleMenuEnter("학과")}
                         onMouseLeave={() => handleMenuLeave()}
@@ -66,7 +66,7 @@ function Navbar() {
                     >
                         학과
                     </li>
-                    <li className="menu-item"
+                    <li className={`menu-item ${activeMenu === "학생회" ? "active" : ""}`}
                         style={{ gridColumn: '6' }}
                         onMouseEnter={() => handleMenuEnter("학생회")}
                         onMouseLeave={() => handleMenuLeave()}
@@ -74,7 +74,7 @@ function Navbar() {
                     >
                         학생회
                     </li>
-                    <li className="menu-item"
+                    <li className={`menu-item ${activeMenu === "새내기배움터" ? "active" : ""}`}
                         style={{ gridColumn: '7' }}
                         onMouseEnter={() => handleMenuEnter("새내기배움터")}
                         onMouseLeave={() => handleMenuLeave()}
@@ -82,7 +82,7 @@ function Navbar() {
                     >
                         {'새내기\n배움터'}
                     </li>
-                    <li className="menu-item"
+                    <li className={`menu-item ${activeMenu === "가이드" ? "active" : ""}`}
                         style={{ gridColumn: '8' }}
                         onMouseEnter={() => handleMenuEnter("가이드")}
                         onMouseLeave={() => handleMenuLeave()}
