@@ -12,10 +12,8 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <div className="main-content">
+        <div className="app-content">
           <Title />
-          <div className="grid-container">
-            <div className="col-12 col-md-12 col-sm-12">
               <Routes>
                 {/* "/" 엔드포인트 */}
                 <Route path="/" element={<Main />} />
@@ -33,8 +31,6 @@ function App() {
                 <Route path="/special_organizations" element={<SpecialOrganizations />} />
               </Routes>
             </div>
-          </div>
-        </div>
         <Footer />
       </div>
     </Router>
