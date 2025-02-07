@@ -1,5 +1,6 @@
 import "./Main.css";
 import Calendar from "./Calendar/Calendar.tsx";
+import Apply from "./Apply/Apply.tsx";
 
 const Main = () => {
 
@@ -52,6 +53,7 @@ const Main = () => {
     return (
         <div className="content-background">
             <div className="main-content">
+                <Apply />
                 <Calendar events={events} />
             </div>
         </div>

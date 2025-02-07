@@ -2,7 +2,7 @@ import './App.css';
 import Main from './components/Main.tsx';
 import Footer from './components/Footer/Footer.tsx';
 import Title from './components/Title/Title.tsx';
-import Apply from './components/Apply.tsx';
+import Apply from './components/Apply/Apply.tsx';
 import OT from './components/OT/OT.tsx';
 import Organizations from './components/Organizations.tsx';
 import SpecialOrganizations from './components/SpecialOrganizations.tsx';
