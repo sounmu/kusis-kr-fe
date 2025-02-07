@@ -1,9 +1,9 @@
 import './Apply.css';
 
 function Apply() {
-    const targetUrl = "https://your-configured-link.com/apply"; // pre-configured link
+    const targetUrl = "https://forms.gle/szSzGBXej8efDBeh6"; // pre-configured link
     const handleApplyClick = () => {
-        window.location.href = targetUrl;
+        window.open(targetUrl, '_blank');
     };
 
     return (
