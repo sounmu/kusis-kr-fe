@@ -111,7 +111,7 @@ const Calendar = ({ events }: CalendarProps) => {
                         >
                             &#8249;
                         </button>
-                        <h2>{currentDate.getFullYear()}년 {currentDate.getMonth() + 1}월</h2>
+                        <div className="month-display-text">{currentDate.getFullYear()}년 {currentDate.getMonth() + 1}월</div>
                         <button 
                             onClick={() => changeMonth(1)} 
                             className={`calendar-arrow right ${isLastMonth ? 'disabled' : ''}`}
