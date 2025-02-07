@@ -43,8 +43,8 @@ const Main = () => {
         },
         {
             id: '6',
-            startDate: new Date(2025, 0, 21),
-            endDate: new Date(2025, 0, 21),
+            startDate: new Date(2025, 1, 8),
+            endDate: new Date(2025, 1, 8),
             title: '아 맞다 군휴학 신청하기',
             colorIndex: 5
         },
