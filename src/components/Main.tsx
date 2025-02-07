@@ -51,7 +51,7 @@ const Main = () => {
     ];
 
     return (
-        <div className="content-background">
+        <div className="main-content-background">
             <div className="main-content">
                 <Apply />
                 <Calendar events={events} />
