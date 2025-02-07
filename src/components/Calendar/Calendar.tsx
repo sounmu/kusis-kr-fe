@@ -39,6 +39,7 @@ const Calendar = ({ events }: CalendarProps) => {
         const daysInMonth = getDaysInMonth(currentDate);
         const firstDay = getFirstDayOfMonth(currentDate);
         const days = [];
+        const today = new Date();
 
         // 이전 달의 날짜들을 채움
         for (let i = 0; i < firstDay; i++) {
@@ -48,6 +49,7 @@ const Calendar = ({ events }: CalendarProps) => {
         // 현재 달의 날짜들을 채움
         for (let day = 1; day <= daysInMonth; day++) {
             const currentDayDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
+            const isToday = currentDayDate.toDateString() === today.toDateString();
             const dayEvents = events.filter(event => {
                 return currentDayDate >= new Date(event.startDate) && 
                        currentDayDate <= new Date(event.endDate);
@@ -55,7 +57,7 @@ const Calendar = ({ events }: CalendarProps) => {
 
             days.push(
                 <div key={day} className="calendar-day">
-                    <div className="day-number">{day}</div>
+                    <div className={`day-number ${isToday ? 'today' : ''}`}>{day}</div>
                     <div className="day-events">
                         {dayEvents.map(event => (
                             <div key={event.id} className={`event-bar event-color-${event.colorIndex}`}>
@@ -109,7 +111,7 @@ const Calendar = ({ events }: CalendarProps) => {
                         >
                             &#8249;
                         </button>
-                        <h2>{currentDate.getFullYear()}년 {currentDate.getMonth() + 1}월</h2>
+                        <div className="month-display-text">{currentDate.getFullYear()}년 {currentDate.getMonth() + 1}월</div>
                         <button 
                             onClick={() => changeMonth(1)} 
                             className={`calendar-arrow right ${isLastMonth ? 'disabled' : ''}`}

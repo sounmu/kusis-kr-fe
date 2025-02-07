@@ -107,6 +107,12 @@
     width: 100%;
 }
 
+.month-display-text {
+    color: #000;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
 .weekday {
     background-color: #f5f5f5;
     padding: 10px;
@@ -126,6 +132,17 @@
 .day-number {
     font-size: 14px;
     margin-bottom: 5px;
+}
+
+.day-number.today {
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .day-events {
