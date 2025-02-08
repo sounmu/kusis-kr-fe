@@ -41,8 +41,8 @@ const DropdownBackDrop: React.FC<DropdownBackdropProps> = ({ activeMenu, handleM
                             </a>
                         </div>
                         <div className="dropdown-inner" style={{ gridColumn: '3' }}>
-                            <a href="https://sugang.korea.ac.kr/" target="_blank" rel="noopener noreferrer">
-                                {'LMS\n(차후 수정)'}
+                            <a href="https://canvas.korea.ac.kr/" target="_blank" rel="noopener noreferrer">
+                                {'LMS'}
                             </a>
                         </div>
                         <div className="dropdown-inner" style={{ gridColumn: '4' }}>
