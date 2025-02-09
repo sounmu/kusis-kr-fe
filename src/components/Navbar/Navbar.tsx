@@ -57,48 +57,58 @@ function Navbar() {
     return (
         <>
             <div className="navbar-container">
-                <ul className="menu">
-                    <li className={`menu-item ${activeMenu === "학과" ? "active" : ""}`}
-                        style={{ gridColumn: '5' }}
-                        onMouseEnter={() => handleMenuEnter("학과")}
-                        onMouseLeave={() => handleMenuLeave()}
-                        onClick={() => toggleDropdown("학과")}
-                    >
-                        학과
-                    </li>
-                    <li className={`menu-item ${activeMenu === "학생회" ? "active" : ""}`}
-                        style={{ gridColumn: '6' }}
-                        onMouseEnter={() => handleMenuEnter("학생회")}
-                        onMouseLeave={() => handleMenuLeave()}
-                        onClick={() => toggleDropdown("학생회")}
-                    >
-                        학생회
-                    </li>
-                    <li className={`menu-item ${activeMenu === "새내기배움터" ? "active" : ""}`}
-                        style={{ gridColumn: '7' }}
-                        onMouseEnter={() => handleMenuEnter("새내기배움터")}
-                        onMouseLeave={() => handleMenuLeave()}
-                        onClick={() => toggleDropdown("새내기배움터")}
-                    >
-                        {'새내기\n배움터'}
-                    </li>
-                    <li className={`menu-item ${activeMenu === "가이드" ? "active" : ""}`}
-                        style={{ gridColumn: '8' }}
-                        onMouseEnter={() => handleMenuEnter("가이드")}
-                        onMouseLeave={() => handleMenuLeave()}
-                        onClick={() => toggleDropdown("가이드")}
-                    >
-                        가이드
-                    </li>
-                </ul>
+                <div className="desktop-menu">
+                    <ul className="menu">
+                        <li className={`menu-item ${activeMenu === "학과" ? "active" : ""}`}
+                            style={{ gridColumn: '5' }}
+                            onMouseEnter={() => handleMenuEnter("학과")}
+                            onMouseLeave={() => handleMenuLeave()}
+                            onClick={() => toggleDropdown("학과")}
+                        >
+                            학과
+                        </li>
+                        <li className={`menu-item ${activeMenu === "학생회" ? "active" : ""}`}
+                            style={{ gridColumn: '6' }}
+                            onMouseEnter={() => handleMenuEnter("학생회")}
+                            onMouseLeave={() => handleMenuLeave()}
+                            onClick={() => toggleDropdown("학생회")}
+                        >
+                            학생회
+                        </li>
+                        <li className={`menu-item ${activeMenu === "새내기배움터" ? "active" : ""}`}
+                            style={{ gridColumn: '7' }}
+                            onMouseEnter={() => handleMenuEnter("새내기배움터")}
+                            onMouseLeave={() => handleMenuLeave()}
+                            onClick={() => toggleDropdown("새내기배움터")}
+                        >
+                            {'새내기\n배움터'}
+                        </li>
+                        <li className={`menu-item ${activeMenu === "가이드" ? "active" : ""}`}
+                            style={{ gridColumn: '8' }}
+                            onMouseEnter={() => handleMenuEnter("가이드")}
+                            onMouseLeave={() => handleMenuLeave()}
+                            onClick={() => toggleDropdown("가이드")}
+                        >
+                            가이드
+                        </li>
+                    </ul>
+                </div>
+                {/* 드랍다운 배경을 navbar-wrapper 외부에 렌더링 */}
+                <DropdownBackDrop
+                    activeMenu={activeMenu}
+                    handleMenuEnter={handleMenuEnter}
+                    handleMenuLeave={handleMenuLeave}
+                    setActiveMenu={setActiveMenu}
+                />
+                <div className="mobile-menu">
+                <div className="mobile-menu-content">
+                    <div className="mobile-menu-item">
+                        <span>학과</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            {/* 드랍다운 배경을 navbar-wrapper 외부에 렌더링 */}
-            <DropdownBackDrop
-                activeMenu={activeMenu}
-                handleMenuEnter={handleMenuEnter}
-                handleMenuLeave={handleMenuLeave}
-                setActiveMenu={setActiveMenu}
-            />
+
         </>
     );
 }
