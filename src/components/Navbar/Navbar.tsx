@@ -5,6 +5,7 @@ import DropdownBackDrop from "./DropdownBackdrop.tsx";
 
 function Navbar() {
     const [activeMenu, setActiveMenu] = useState<string | null>(null);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const openTimer = useRef<NodeJS.Timeout | null>(null);
     const closeTimer = useRef<NodeJS.Timeout | null>(null);
@@ -54,6 +55,10 @@ function Navbar() {
         }
     };
 
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
     return (
         <>
             <div className="navbar-container">
@@ -101,12 +106,36 @@ function Navbar() {
                     setActiveMenu={setActiveMenu}
                 />
                 <div className="mobile-menu">
-                <div className="mobile-menu-content">
-                    <div className="mobile-menu-item">
-                        <span>학과</span>
+                    <div className="mobile-menu-content">
+                        <div className="mobile-menu-item" onClick={toggleMenu}>
+                            <span></span>
+                            <span></span>
+                            <span></span>
                         </div>
                     </div>
                 </div>
+                {isMenuOpen && (
+                    <div className="mobile-dropdown">
+                        <ul className="mobile-dropdown-menu">
+                            <li className={`mobile-dropdown-item ${activeMenu === "학과" ? "active" : ""}`}
+                                onClick={() => { toggleDropdown("학과"); toggleMenu(); }}>
+                                학과
+                            </li>
+                            <li className={`mobile-dropdown-item ${activeMenu === "학생회" ? "active" : ""}`}
+                                onClick={() => { toggleDropdown("학생회"); toggleMenu(); }}>
+                                학생회
+                            </li>
+                            <li className={`mobile-dropdown-item ${activeMenu === "새내기배움터" ? "active" : ""}`}
+                                onClick={() => { toggleDropdown("새내기배움터"); toggleMenu(); }}>
+                                새내기배움터
+                            </li>
+                            <li className={`mobile-dropdown-item ${activeMenu === "가이드" ? "active" : ""}`}
+                                onClick={() => { toggleDropdown("가이드"); toggleMenu(); }}>
+                                가이드
+                            </li>
+                        </ul>
+                    </div>
+                )}
             </div>
 
         </>

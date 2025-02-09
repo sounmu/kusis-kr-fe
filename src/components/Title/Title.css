@@ -72,6 +72,7 @@
     .title-content {
         flex-direction: column;
         gap: 2px;
+        height: 80px;
     }
     .school-title-kr {
         font-size: 18px;
