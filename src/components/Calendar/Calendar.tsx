@@ -3,10 +3,10 @@ import { CalendarEvent } from '../../types';
 import './Calendar.css';
 
 interface CalendarProps {
-    events: CalendarEvent[];
+    events?: CalendarEvent[];
 }
 
-const Calendar = ({ events }: CalendarProps) => {
+const Calendar = ({ events = [] }: CalendarProps) => {
     const currentYear = new Date().getFullYear();
     const [selectedYear, setSelectedYear] = useState(currentYear);
     const [currentDate, setCurrentDate] = useState(new Date());
@@ -66,7 +66,7 @@ const Calendar = ({ events }: CalendarProps) => {
                                         <span className="event-text">{event.title}</span>
                                     </a>
                                 ) : (
-                                    <span className="event-text">{event.title}</span>
+                                    <span className="event-link event-text">{event.title}</span>
                                 )}
                             </div>
                         ))}

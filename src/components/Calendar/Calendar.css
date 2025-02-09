@@ -30,7 +30,7 @@
 .month-display {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 30px;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -196,9 +196,9 @@
 
 @media (max-width: 768px) {
     .calendar-container {
-        width: calc(100% - 20px);
+        width: calc(100vw - 20px);
         padding: 10px;
-        margin-top: 15px;
+        margin: 20px auto 0;
     }
 
     .calendar-grid {
@@ -235,17 +235,9 @@
         font-size: 10px;
     }
 
-    .calendar-controls {
-        gap: 10px;
-    }
-
     .month-display {
-        gap: 5px;
-    }
-
-    .month-display h2 {
-        font-size: 1rem;
-        min-width: 90px;
+        width: 300px;
+        gap: 20px;
     }
 
     .year-select {
@@ -283,6 +275,15 @@
 
     .day-events {
         margin-top: 2px;
+    }
+    .events-summary {
+        margin-top: 15px;
+        padding-top: 10px;
+    }
+
+    .event-summary-item {
+        font-size: 12px;
+        margin-bottom: 6px;
     }
 }
 
@@ -335,14 +336,11 @@
     color: #666;
 }
 
-@media (max-width: 768px) {
-    .events-summary {
-        margin-top: 15px;
-        padding-top: 10px;
+@media (max-width: 480px) {
+    .calendar-container {
+        margin-top: 60px;
     }
-
-    .event-summary-item {
-        font-size: 12px;
-        margin-bottom: 6px;
+    .month-display-text {
+        font-size: 1.0rem;
     }
 }
