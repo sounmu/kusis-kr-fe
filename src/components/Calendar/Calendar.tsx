@@ -103,37 +103,35 @@ const Calendar = ({ events = [] }: CalendarProps) => {
         <div className="calendar-container">
             <div className="calendar-header">
                 <div className="calendar-controls">
-                    <div className="month-display-wrapper">
-                        <div className="month-display">
-                            <button 
-                                onClick={() => changeMonth(-1)} 
-                                className={`calendar-arrow left ${isFirstMonth ? 'disabled' : ''}`}
-                                disabled={isFirstMonth}
-                            >
-                                &#8249;
-                            </button>
-                            <div className="month-display-text">{currentDate.getFullYear()}년 {currentDate.getMonth() + 1}월</div>
-                            <button 
-                                onClick={() => changeMonth(1)} 
-                                className={`calendar-arrow right ${isLastMonth ? 'disabled' : ''}`}
-                                disabled={isLastMonth}
-                            >
-                                &#8250;
-                            </button>
-                        </div>
+                    <div className="month-display">
+                        <button 
+                            onClick={() => changeMonth(-1)} 
+                            className={`calendar-arrow left ${isFirstMonth ? 'disabled' : ''}`}
+                            disabled={isFirstMonth}
+                        >
+                            &#8249;
+                        </button>
+                        <div className="month-display-text">{currentDate.getFullYear()}년 {currentDate.getMonth() + 1}월</div>
+                        <button 
+                            onClick={() => changeMonth(1)} 
+                            className={`calendar-arrow right ${isLastMonth ? 'disabled' : ''}`}
+                            disabled={isLastMonth}
+                        >
+                            &#8250;
+                        </button>
                     </div>
-                    <select 
-                        value={selectedYear}
-                        onChange={handleYearChange}
-                        className="year-select"
-                    >
-                        {years.map(year => (
-                            <option key={year} value={year}>
-                                {year}년
-                            </option>
-                        ))}
-                    </select>
                 </div>
+                <select 
+                    value={selectedYear}
+                    onChange={handleYearChange}
+                    className="year-select"
+                >
+                    {years.map(year => (
+                        <option key={year} value={year}>
+                            {year}년
+                        </option>
+                    ))}
+                </select>
             </div>
             <div className="calendar-grid">
                 <div className="weekday">일</div>
