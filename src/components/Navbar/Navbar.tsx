@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import "./Navbar.css";
 import DropdownBackDrop from "./DropdownBackdrop.tsx";
+import MobileOverlayMenu from './MobileOverlayMenu.tsx';
 
 
 function Navbar() {
@@ -106,38 +107,21 @@ function Navbar() {
                     setActiveMenu={setActiveMenu}
                 />
                 <div className="mobile-menu">
-                    <div className="mobile-menu-content">
-                        <div className="mobile-menu-item" onClick={toggleMenu}>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
+                    <button 
+                        className={`hamburger-button ${isMenuOpen ? 'open' : ''}`}
+                        onClick={toggleMenu}
+                        aria-label="메뉴 열기"
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
-                {isMenuOpen && (
-                    <div className="mobile-dropdown">
-                        <ul className="mobile-dropdown-menu">
-                            <li className={`mobile-dropdown-item ${activeMenu === "학과" ? "active" : ""}`}
-                                onClick={() => { toggleDropdown("학과"); toggleMenu(); }}>
-                                학과
-                            </li>
-                            <li className={`mobile-dropdown-item ${activeMenu === "학생회" ? "active" : ""}`}
-                                onClick={() => { toggleDropdown("학생회"); toggleMenu(); }}>
-                                학생회
-                            </li>
-                            <li className={`mobile-dropdown-item ${activeMenu === "새내기배움터" ? "active" : ""}`}
-                                onClick={() => { toggleDropdown("새내기배움터"); toggleMenu(); }}>
-                                새내기배움터
-                            </li>
-                            <li className={`mobile-dropdown-item ${activeMenu === "가이드" ? "active" : ""}`}
-                                onClick={() => { toggleDropdown("가이드"); toggleMenu(); }}>
-                                가이드
-                            </li>
-                        </ul>
-                    </div>
-                )}
             </div>
-
+            <MobileOverlayMenu 
+                isOpen={isMenuOpen}
+                onClose={() => setIsMenuOpen(false)}
+            />
         </>
     );
 }

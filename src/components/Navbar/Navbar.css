@@ -111,77 +111,61 @@
 
 @media (max-width: 480px) {
     .navbar-container {
-        position: absolute;
+        position: fixed;
         right: 16px;
-        top: 40px;  /* 80px의 절반인 40px로 설정 */
-        transform: translateY(-50%);
+        top: 30px;
         width: auto;
         margin: 0;
         padding: 0;
-        height: 25px;  /* 햄버거 메뉴의 높이와 동일하게 설정 */
+        height: 25px;
     }
+
+    .navbar-position-wrapper {
+        position: relative;
+        transform: translateY(-50%);
+    }
+
     .desktop-menu {
         display: none;
     }
-    
+
     .mobile-menu {
         display: block;
     }
 
-    .mobile-menu-content {
-        display: flex;
-        align-items: center;
-    }
-
-    .mobile-menu-item {
-        cursor: pointer;
-        width: 30px;
-        height: 25px;
+    .hamburger-button {
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-    }
-
-    .mobile-menu-item span {
-        display: block;
-        height: 3px;
-        background-color: black;
-        border-radius: 2px;
-    }
-
-    /* Dropdown styling for mobile */
-    .mobile-dropdown {
-        top: 40px;  /* 햄버거 메뉴 아래에 바로 위치하도록 조정 */
-        background-color: #f5f5f7;
-        padding: 10px 0;
-        position: absolute;
-        left: 0;
-        width: 100%;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        z-index: 10;
-    }
-
-    .mobile-dropdown-menu {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .mobile-dropdown-menu li {
-        padding: 10px;
-        border-bottom: 1px solid #ddd;
-        font-size: 16px;
-        font-family: 'Pretendard', sans-serif;
-        text-align: center;
+        width: 30px;
+        height: 20px;
+        background: none;
+        border: none;
         cursor: pointer;
+        padding: 0;
     }
 
-    .mobile-dropdown-menu li:last-child {
-        border-bottom: none;
+    .hamburger-button span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+        transition: all 0.3s ease;
     }
 
-    .mobile-dropdown-menu li.active {
-        color: #007bff;
+    .hamburger-button.open span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+        background-color: #fff;  /* 메뉴 열렸을 때 흰색으로 변경 */
+    }
+
+    .hamburger-button.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-button.open span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+        background-color: #fff;  /* 메뉴 열렸을 때 흰색으로 변경 */
     }
 }
 
@@ -206,11 +190,4 @@
 /* New active state styling: Only change text color on click */
 .menu-item.active {
     color: #007bff;
-}
-
-/* Hide mobile dropdown on non-mobile viewports */
-@media (min-width: 481px) {
-    .mobile-dropdown {
-        display: none;
-    }
 }
