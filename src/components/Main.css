@@ -10,10 +10,13 @@
     padding-bottom: 40px;
     display: flex;
     flex-direction: column;
+    isolation: isolate;
 }
 
 .main-content {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 0;
+    position: relative;
+    z-index: 1;
 } 

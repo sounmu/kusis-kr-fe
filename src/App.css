@@ -1,4 +1,7 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* 최상위 레벨에서 모든 기본 마진과 패딩을 제거 */
 * {
@@ -29,6 +32,8 @@ body {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
+    position: relative;
+    z-index: 1;
 }
 
 .app-content {
@@ -111,3 +116,88 @@ body {
     .col-sm-11 { grid-column: span 11; }
     .col-sm-12 { grid-column: span 12; }
 }
+
+/* z-index 관리 */
+/* 기본 레이어 */
+.app {
+    position: relative;
+    z-index: 1;
+}
+
+/* 기본 컴포넌트 */
+.title-section {
+    position: relative;
+    z-index: 1;
+}
+
+.calendar-container {
+    position: relative;
+    z-index: 1;
+}
+
+/* 달력 관련 */
+.month-display-wrapper {
+    position: absolute;
+    z-index: 2;
+}
+
+.year-select {
+    position: relative;
+    z-index: 3;
+}
+
+/* Navbar 관련 */
+.navbar-container {
+    position: relative;
+    z-index: 90;
+}
+
+.navbar-position-wrapper {
+    position: relative;
+    z-index: 91;
+}
+
+/* 드롭다운 관련 */
+.dropdown-backdrop {
+    position: absolute;
+    z-index: 80;
+}
+
+.dropdown-content {
+    position: relative;
+    z-index: 81;
+}
+
+/* 오버레이 관련 */
+.overlay-container {
+    position: fixed;
+    z-index: 1000;  /* 최상위 z-index로 변경 */
+}
+
+.overlay-backdrop {
+    position: fixed;
+    z-index: 1000;
+}
+
+.overlay-content {
+    position: fixed;
+    z-index: 1001;
+}
+
+.hamburger-button,
+.close-button {
+    position: fixed;
+    z-index: 1002;
+}
+
+/* 헤더/푸터 */
+.header {
+    position: relative;
+    z-index: 95;
+}
+
+.footer {
+    position: relative;
+    z-index: 95;
+}
+
