@@ -41,8 +41,7 @@ function MobileOverlayMenu({ isOpen, onClose }: MobileOverlayMenuProps) {
     return (
         <div className={`overlay-container ${isOpen ? 'open' : ''}`}>
             <div className="overlay-backdrop" onClick={onClose} />
-            <button className="close-button" onClick={onClose}>
-                ×
+            <button className="close-button" onClick={onClose} aria-label="메뉴 닫기">
             </button>
             <div className="overlay-content">
                 <ul className="overlay-menu">

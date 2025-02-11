@@ -78,17 +78,36 @@
 
 .close-button {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 30px;
+    right: 16px;
     background: none;
     border: none;
-    color: white;
-    font-size: 30px;
     cursor: pointer;
-    padding: 10px;
+    width: 30px;
+    height: 20px;
+    padding: 0;
 }
 
-.close-button:hover {
-    transform: rotate(90deg);
-    transition: transform 0.3s ease;
+.close-button::before,
+.close-button::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    top: 50%;
+    left: 0;
+}
+
+.close-button::before {
+    transform: rotate(45deg);
+}
+
+.close-button::after {
+    transform: rotate(-45deg);
+}
+
+.close-button:hover::before,
+.close-button:hover::after {
+    background-color: #ddd;
 } 

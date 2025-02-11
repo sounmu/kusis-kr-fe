@@ -108,7 +108,7 @@ function Navbar() {
                 />
                 <div className="mobile-menu">
                     <button 
-                        className={`hamburger-button ${isMenuOpen ? 'open' : ''}`}
+                        className={`hamburger-button ${isMenuOpen ? 'hidden' : ''}`}
                         onClick={toggleMenu}
                         aria-label="메뉴 열기"
                     >
