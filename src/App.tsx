@@ -7,6 +7,8 @@ import OT from './components/OT/OT.tsx';
 import Organizations from './components/Organizations.tsx';
 import SpecialOrganizations from './components/SpecialOrganizations.tsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react'
+
 
 function App() {
   return (
@@ -33,6 +35,7 @@ function App() {
             </div>
         <Footer />
       </div>
+      <Analytics />
     </Router>
   )
 }
