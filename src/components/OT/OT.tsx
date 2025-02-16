@@ -117,7 +117,11 @@ function OT() {
                                             className="post-card"
                                         >
                                             {post.first_image && ( // first_image가 있을 경우에만 이미지 표시
-                                                <img src={post.first_image} alt={post.title} />
+                                                <img 
+                                                    src={post.first_image} 
+                                                    alt={post.title}
+                                                    loading="lazy"
+                                                />
                                             )}
                                             <h3>{post.title}</h3>
                                         </Link>
