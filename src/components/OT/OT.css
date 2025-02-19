@@ -1,7 +1,7 @@
 .ot-content-background {
     width: 100vw;
     background-color: #f5f5f7;
-    min-height: calc(100vh - 260px);
+    min-height: calc(100vh - 180px);
     position: relative;
     left: 50%;
     right: 50%;
@@ -222,7 +222,7 @@
 
 @media screen and (max-width: 480px) {
     .ot-content-background {
-        min-height: calc(100vh - 240px);
+        min-height: calc(100vh - 160px);
     }
 }
 

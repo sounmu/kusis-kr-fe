@@ -32,8 +32,8 @@ function App() {
             {/* "/special_organizaions/" 엔드포인트 */}
             <Route path="/special_organizations" element={<SpecialOrganizations />} />
           </Routes>
-          <Footer />
         </div>
+        <Footer />
       </div>
       <Analytics />
     </Router>
