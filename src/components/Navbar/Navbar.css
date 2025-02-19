@@ -110,18 +110,18 @@
 
 @media (max-width: 480px) {
     .navbar-container {
-        position: fixed;
-        right: 16px;
-        top: 30px;
-        width: auto;
+        position: relative;
+        width: 100%;
         margin: 0;
-        padding: 0;
-        height: 25px;
+        padding: 16px;
+        height: 80px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
     }
 
     .navbar-position-wrapper {
         position: relative;
-        transform: translateY(-50%);
     }
 
     .desktop-menu {
