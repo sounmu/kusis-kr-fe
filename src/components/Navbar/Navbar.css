@@ -110,14 +110,16 @@
 
 @media (max-width: 480px) {
     .navbar-container {
-        position: relative;
-        width: 100%;
+        position: absolute;
+        right: 0;
+        width: auto;
         margin: 0;
         padding: 16px;
         height: 80px;
         display: flex;
         justify-content: flex-end;
         align-items: center;
+        max-width: 80px;
     }
 
     .navbar-position-wrapper {
