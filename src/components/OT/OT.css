@@ -1,18 +1,21 @@
-.content-background {
+.ot-content-background {
     width: 100vw;
     background-color: #f5f5f7;
-    min-height: calc(100vh - 260px);
+    min-height: calc(100vh - 180px);
     position: relative;
     left: 50%;
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
+    isolation: isolate;
 }
 
-.main-content {
+.ot-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 10px;
+    padding: 0 5px;
+    position: relative;
+    z-index: 1;
 }
 
 .category-nav {
@@ -215,7 +218,13 @@
         font-size: 14px;
         white-space: nowrap;
     }
-} 
+}
+
+@media screen and (max-width: 480px) {
+    .ot-content-background {
+        min-height: calc(100vh - 160px);
+    }
+}
 
 .back-button {
     padding: 8px 16px;

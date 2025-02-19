@@ -66,7 +66,7 @@ const Calendar = ({ events = [] }: CalendarProps) => {
                                         <span className="event-text">{event.title}</span>
                                     </a>
                                 ) : (
-                                    <span className="event-link event-text">{event.title}</span>
+                                    <span className="event-text">{event.title}</span>
                                 )}
                             </div>
                         ))}

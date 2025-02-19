@@ -1,4 +1,6 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+
 
 .calendar-container {
     width: 800px;
@@ -6,7 +8,7 @@
     padding: 20px 20px;
     background-color: #f5f5f7;
     border-radius: 8px;
-    font-family: 'Pretendard', sans-serif;
+    font-family: 'Pretendard Variable', sans-serif;
     overflow: hidden;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
 }
@@ -32,19 +34,20 @@
 .month-display {
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 300px;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    padding: 0 20px;
 }
 
-/* 화살표 공간 유지를 위한 더미 요소 */
-.month-display::before,
-.month-display::after {
-    content: '';
-    width: 30px;
-    height: 30px;
-    visibility: hidden;
+.month-display-text {
+    color: #000;
+    font-weight: 500;
+    font-size: 1.4rem;
+    white-space: nowrap;
 }
 
 .year-select {
@@ -97,12 +100,6 @@
     width: 100%;
 }
 
-.month-display-text {
-    color: #000;
-    font-weight: 500;
-    font-size: 1.2rem;
-}
-
 .weekday {
     background-color: #f5f5f5;
     padding: 10px;
@@ -128,8 +125,8 @@
     background-color: black;
     color: white;
     border-radius: 50%;
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -226,8 +223,11 @@
     }
 
     .month-display {
-        position: static;
-        transform: none;
+        max-width: 250px;
+    }
+
+    .month-display-text {
+        font-size: 1.2rem;
     }
     
     .year-select,
@@ -251,12 +251,6 @@
 
     .calendar-arrow.right {
         margin-left: 2px;
-    }
-
-    .month-display::before,
-    .month-display::after {
-        width: 25px;
-        height: 25px;
     }
 
     .event-text {
@@ -335,5 +329,9 @@
     }
     .month-display-text {
         font-size: 1.0rem;
+    }
+    .day-number.today {
+        width: 16px;
+        height: 16px;
     }
 }
