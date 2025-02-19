@@ -2,11 +2,12 @@
     width: 100vw;
     height: 160px;
     background-color: #49454F;
-    position: relative;
     left: 50%;
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
+    position: relative;
+    z-index: 95;
 }
 
 .footer-content {

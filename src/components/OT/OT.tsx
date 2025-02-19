@@ -96,8 +96,8 @@ function OT() {
     };
 
     return (
-        <div className="content-background">
-            <div className="main-content">
+        <div className="ot-content-background">
+            <div className="ot-content">
                 <CategoryNav
                     categories={categories}
                     onCategoryClick={handleCategoryClick}
