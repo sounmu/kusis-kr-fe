@@ -16,23 +16,23 @@ function App() {
       <div className="app">
         <div className="app-content">
           <Title />
-          <Routes>
-            {/* "/" 엔드포인트 */}
-            <Route path="/" element={<Main />} />
+            <Routes>
+              {/* "/" 엔드포인트 */}
+              <Route path="/" element={<Main />} />
 
-            {/* "/2025ot/*" 엔드포인트 */}
-            <Route path="/2025ot/*" element={<OT />} />
+              {/* "/2025ot/*" 엔드포인트 */}
+              <Route path="/2025ot/*" element={<OT />} />
 
-            {/* "/2025ot/apply" 엔드포인트 */}
-            <Route path="/2025ot/apply" element={<Apply />} />
+              {/* "/2025ot/apply" 엔드포인트 */}
+              <Route path="/2025ot/apply" element={<Apply />} />
 
-            {/* "/organizaions/" 엔드포인트 */}
-            <Route path="/organizations" element={<Organizations />} />
+              {/* "/organizaions/" 엔드포인트 */}
+              <Route path="/organizations" element={<Organizations />} />
 
-            {/* "/special_organizaions/" 엔드포인트 */}
-            <Route path="/special_organizations" element={<SpecialOrganizations />} />
-          </Routes>
-        </div>
+              {/* "/special_organizaions/" 엔드포인트 */}
+              <Route path="/special_organizations" element={<SpecialOrganizations />} />
+            </Routes>
+          </div>
         <Footer />
       </div>
       <Analytics />
