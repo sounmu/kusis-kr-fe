@@ -1,7 +1,8 @@
 .main-content-background {
     width: 100vw;
+    overflow-x: hidden;
     background-color: #F5F5F7;
-    min-height: calc(100vh - 180px);
+    min-height: 100%;
     position: relative;
     left: 50%;
     right: 50%;
@@ -15,6 +16,7 @@
 
 .main-content {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 0;
     position: relative;

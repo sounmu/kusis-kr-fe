@@ -27,10 +27,10 @@
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1.5rem 0;
     z-index: 1;
     text-align: center;
     line-height: 1.6;
+    font-size: 12px;
 }
 
 .footer p {
@@ -38,7 +38,3 @@
     opacity: 0.9;
     transition: opacity 0.2s ease;
 }
-
-.footer p:hover {
-    opacity: 1;
-} 
