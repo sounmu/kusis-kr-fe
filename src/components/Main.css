@@ -1,7 +1,7 @@
 .main-content-background {
     width: 100vw;
     background-color: #F5F5F7;
-    min-height: calc(100vh - 260px);
+    min-height: calc(100vh - 180px);
     position: relative;
     left: 50%;
     right: 50%;
