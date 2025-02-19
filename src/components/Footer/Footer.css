@@ -1,9 +1,12 @@
 .footer {
     position: relative;
     width: 100%;
-    height: 80px;
+    height: 100px;
     background-color: #49454F;
     z-index: 95;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer::before {
@@ -24,7 +27,18 @@
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    height: 100%;
-    padding: 0;
+    padding: 1.5rem 0;
     z-index: 1;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.footer p {
+    margin: 0;
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
+}
+
+.footer p:hover {
+    opacity: 1;
 } 
